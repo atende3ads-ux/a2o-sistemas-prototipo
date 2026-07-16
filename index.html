@@ -135,18 +135,18 @@
 
   .burger{ display:none; width:42px; height:42px; border-radius:10px; background:rgba(20,36,90,.06); border:1px solid rgba(20,36,90,.14); color:#14245a; font-size:18px; align-items:center; justify-content:center; }
 
-  /* ============ HERO (imagem full-bleed) ============ */
-  .hero{ position:sticky; top:0; z-index:0; min-height:100vh; padding:180px 32px 120px; overflow:hidden; color:var(--c-navy-900); background:linear-gradient(185deg,#FFFFFF 2%,#EEF4FC 38%,#E3EDF9 71%); display:flex; align-items:center; }
-  .hero-bg{ position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position:center right; z-index:0; pointer-events:none; }
-  /* véu proporcional (não em px) que protege a legibilidade do texto conforme a imagem "cresce" sobre a área do conteúdo em telas médias */
-  .hero-scrim{ position:absolute; inset:0; z-index:1; pointer-events:none; background:linear-gradient(90deg, #F4F8FD 0%, #F0F5FC 40%, rgba(240,245,252,.7) 54%, rgba(240,245,252,0) 68%); }
-  .hero-inner{ position:relative; z-index:2; max-width:1640px; margin:0 auto; width:100%; }
-  .hero-content{ max-width:540px; }
+  /* ============ HERO V2 (duas colunas: texto | caminhão, fundo próprio) ============ */
+  .hero-v2{ position:sticky; top:0; z-index:0; min-height:100vh; padding:180px 32px 120px; overflow:hidden; color:var(--c-navy-900); background:linear-gradient(185deg,#FFFFFF 2%,#EEF4FC 38%,#E3EDF9 71%); display:flex; align-items:center; }
+  .hero-v2-bg{ position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position:top left; z-index:0; pointer-events:none; }
+  .hero-v2-inner{ position:relative; z-index:2; max-width:1640px; margin:0 auto; width:100%; display:flex; align-items:center; justify-content:space-between; gap:48px; }
+  .hero-v2-text{ flex:1 1 480px; max-width:560px; min-width:0; }
+  .hero-v2-media{ flex:1 1 420px; min-width:0; display:flex; justify-content:center; align-items:center; }
+  .hero-v2-truck{ width:100%; max-width:680px; height:auto; display:block; filter:drop-shadow(0 30px 40px rgba(14,23,51,.22)); }
   .hero-pill{ display:inline-flex; align-items:center; gap:10px; padding:7px 16px; background:#fff; border:1px solid var(--c-border); border-radius:999px; font-size:13px; font-weight:600; color:var(--c-text-strong); box-shadow:0 2px 4px rgba(14,23,51,.05); margin-bottom:14px; }
   .hero-pill .dot{ width:8px; height:8px; background:var(--c-cyan); border-radius:2px; box-shadow:0 0 0 3px rgba(40,199,247,.25); }
-  .hero h1{ font-family:var(--font-display); font-size:clamp(30px,3.3vw,42px); font-weight:400; line-height:1.1; letter-spacing:-.037em; color:#14245a; margin:0; max-width:560px; }
-  .hero h1 b{ font-weight:800; }
-  .hero-sub{ font-size:16px; color:var(--c-text); line-height:1.4; margin-top:20px; max-width:560px; }
+  .hero-v2 h1{ font-family:var(--font-display); font-size:clamp(30px,3.3vw,42px); font-weight:400; line-height:1.1; letter-spacing:-.037em; color:#14245a; margin:0; }
+  .hero-v2 h1 b{ font-weight:800; }
+  .hero-sub{ font-size:16px; color:var(--c-text); line-height:1.4; margin-top:20px; }
   .hero-actions{ display:flex; align-items:center; flex-wrap:wrap; gap:16px; margin-top:26px; }
   .btn-hero-primary{ display:inline-flex; align-items:center; gap:10px; background:#1d3fa3; color:#fff; border-radius:70px; padding:16px 30px; font-weight:600; font-size:15.5px; letter-spacing:-.005em; box-shadow:0 4px 7px rgba(29,63,163,.25); transition:background .2s, transform .2s; }
   .btn-hero-primary:hover{ background:#14245a; transform:translateY(-1px); }
@@ -367,21 +367,16 @@
 
   /* ============ BLOG (cards tradicionais) ============ */
   .blog-section{ background:var(--c-bg-soft); position:relative; z-index:2; }
-  .blog-cats{ display:flex; flex-wrap:wrap; gap:10px; justify-content:center; margin-bottom:42px; }
+  .blog-cats{ display:flex; flex-wrap:wrap; gap:10px; margin-bottom:42px; }
   .blog-cat{ font-family:inherit; font-size:14px; font-weight:600; color:var(--c-text-strong); background:#fff; border:1px solid var(--c-border); border-radius:999px; padding:9px 18px; cursor:pointer; transition:background .2s, color .2s, border-color .2s; }
   .blog-cat:hover, .blog-cat.active{ background:var(--grad-brand); color:#fff; border-color:transparent; }
-  .blog-featured{ display:grid; grid-template-columns:1fr 1fr; background:#fff; border:1px solid var(--c-border); border-radius:22px; overflow:hidden; margin-bottom:24px; }
-  .blog-featured .bf-media{ position:relative; min-height:300px; }
-  .blog-media img, .bf-media img{ position:absolute; inset:0; width:100%; height:100%; object-fit:cover; }
+  .blog-media img{ position:absolute; inset:0; width:100%; height:100%; object-fit:cover; }
   a.blog-card{ color:inherit; cursor:pointer; }
-  .blog-featured .bf-body{ padding:42px; display:flex; flex-direction:column; justify-content:center; gap:14px; }
-  .bf-body h3{ font-size:27px; font-weight:800; color:var(--c-navy-900); letter-spacing:-.02em; line-height:1.15; }
-  .bf-body p{ font-size:15.5px; color:var(--c-text-muted); line-height:1.6; }
-  .blog-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:24px; }
+  .blog-grid{ display:grid; grid-template-columns:repeat(4,1fr); gap:24px; }
   .blog-card{ background:#fff; border:1px solid var(--c-border); border-radius:18px; overflow:hidden; display:flex; flex-direction:column; transition:transform .25s, box-shadow .25s; }
   .blog-card:hover{ transform:translateY(-4px); box-shadow:0 18px 40px rgba(14,23,51,.09); }
   .blog-media{ position:relative; height:190px; }
-  .blog-media, .bf-media{ background:linear-gradient(140deg,#243c86,#3aa0e0); }
+  .blog-media{ background:linear-gradient(140deg,#243c86,#3aa0e0); }
   .m-fiscal{ background:linear-gradient(140deg,#0E1733,#1D3FA3)!important; }
   .m-transp{ background:linear-gradient(140deg,#1D3FA3,#28C7F7)!important; }
   .m-tech{ background:linear-gradient(140deg,#0E1733,#155e8a)!important; }
@@ -394,7 +389,7 @@
   .blog-body h3{ font-size:19px; font-weight:700; color:var(--c-navy-900); letter-spacing:-.01em; line-height:1.28; }
   .blog-body p{ font-size:14px; color:var(--c-text-muted); line-height:1.55; }
   .blog-more{ margin-top:auto; display:inline-flex; align-items:center; gap:6px; font-size:13.5px; font-weight:700; color:var(--c-blue); padding-top:6px; }
-  .blog-cta{ text-align:center; margin-top:46px; }
+  .blog-cta{ margin-top:46px; }
 
   /* ============ FINAL CTA ============ */
   .final-cta{ background:var(--grad-hero); color:#fff; position:relative; z-index:2; overflow:hidden; text-align:center; }
@@ -411,7 +406,6 @@
   .footer{ background:var(--c-navy-900); color:rgba(255,255,255,.7); padding:62px 32px 30px; position:relative; z-index:2; }
   .footer-inner{ max-width:var(--maxw); margin:0 auto; }
   .footer-top{ display:grid; grid-template-columns:1.5fr 1fr 1fr 1fr 1.1fr; gap:40px; padding-bottom:40px; border-bottom:1px solid rgba(255,255,255,.08); }
-  .footer-brand .logo{ color:#fff; }
   .footer-tag{ margin-top:14px; font-size:14px; line-height:1.6; max-width:320px; }
   .footer-cta{ margin-top:18px; }
   .footer-col h4{ color:#fff; font-size:13px; font-weight:700; letter-spacing:.04em; text-transform:uppercase; margin-bottom:16px; }
@@ -422,18 +416,21 @@
   .seal{ width:54px; height:34px; border:1px solid rgba(255,255,255,.18); border-radius:7px; display:grid; place-items:center; font-size:9px; color:rgba(255,255,255,.5); }
   .footer-bottom{ padding-top:26px; display:flex; justify-content:space-between; align-items:center; font-size:13px; color:rgba(255,255,255,.5); flex-wrap:wrap; gap:12px; }
 
-  /* ============ RESPONSIVE ============ */
+  /* ============ RESPONSIVE (apenas 2 breakpoints: tablet 1024px e mobile 640px) ============ */
   @media (max-width:1024px){
+    /* hero v2: desliga o pin (junto com o do problem-section) e reduz a coluna do caminhão */
+    .hero-v2{ position:relative; }
+    .hero-v2-inner{ gap:32px; }
+    .hero-v2-truck{ max-width:480px; }
+    .header-actions .header-cta{ display:none; }
     .split-grid{ grid-template-columns:1fr; gap:48px; }
     .stats-strip{ grid-template-columns:repeat(2,1fr); gap:32px 0; }
     .stat-item:nth-child(3){ border-left:none; }
     .sol-grid{ grid-template-columns:1fr 1fr; }
     .logos-row{ grid-template-columns:repeat(3,1fr); }
     .cases-tiles, .blog-grid{ grid-template-columns:1fr 1fr; }
-    /* desliga o pin do hero junto com o do problem-section, senão um fica grudado enquanto o outro já rola normal */
-    /* relative (não static) pra manter o contexto de posicionamento do .hero-bg/.hero-scrim absolutos */
-    .hero{ position:relative; }
-    .problem-section{ position:static; min-height:0; display:block; }
+    /* relative (não static) pra manter o ::before decorativo contido pelo overflow:hidden */
+    .problem-section{ position:relative; min-height:0; display:block; }
     .problem-layout{ grid-template-columns:1fr; gap:44px; }
     .problem-aside{ position:static; }
     .footer-top{ grid-template-columns:1fr 1fr; }
@@ -451,30 +448,27 @@
     .sol-tabs{ overflow-x:auto; -webkit-overflow-scrolling:touch; justify-content:flex-start; }
     .hscroll-progress{ display:none; }
   }
-  @media (max-width:768px){
-    /* empilha: texto em cima, imagem full-bleed embaixo */
-    .hero{ position:static; display:flex; flex-direction:column; min-height:auto; padding:104px 20px 0; align-items:stretch; }
-    .hero-inner{ order:1; }
-    .hero > picture{ order:2; display:block; margin:24px -20px 0; }
-    .hero-bg{ position:static; inset:auto; width:100%; height:auto; object-fit:contain; }
-    .hero-scrim{ display:none; }
-    .hero-content{ max-width:100%; }
-    .hero h1{ max-width:100%; font-size:32px; }
+  @media (max-width:640px){
+    /* hero v2: empilha texto em cima, caminhão embaixo */
+    .hero-v2{ position:static; min-height:auto; padding:104px 20px 60px; }
+    .hero-v2-inner{ flex-direction:column; gap:28px; }
+    .hero-v2-text{ max-width:100%; }
+    /* caminhão sangra até as bordas (compensa o padding lateral da seção) pra ganhar presença no mobile */
+    .hero-v2-media{ width:auto; margin:0 -20px; }
+    .hero-v2-truck{ max-width:100%; }
+    .hero-v2 h1{ font-size:30px; }
     .hero-actions{ flex-direction:column; align-items:stretch; }
     .btn-hero-primary, .btn-hero-outline{ justify-content:center; }
     .hero-divisor{ display:none; }
-    .header-actions .header-cta{ display:none; }
-    .blog-featured{ grid-template-columns:1fr; }
-    .blog-featured .bf-media{ min-height:220px; }
-    .blog-featured .bf-body{ padding:28px; }
-  }
-  @media (max-width:640px){
     .section{ padding:70px 20px; }
     .stats-section{ padding:0 20px; margin-top:-44px; }
     .stats-strip{ grid-template-columns:1fr; padding:34px 28px; gap:26px; text-align:center; }
     .stat-item{ padding:0; }
     .stat-item + .stat-item{ border-left:none; border-top:1px solid rgba(255,255,255,.12); padding-top:26px; }
     .sol-grid, .soon-grid, .logos-row, .cases-tiles, .blog-grid{ grid-template-columns:1fr; }
+    /* soluções: tabs viram botões soltos que quebram linha, em vez de scroll horizontal cortado */
+    .sol-tabs{ display:flex; flex-wrap:wrap; justify-content:center; gap:8px; padding:0; background:transparent; border:none; box-shadow:none; overflow-x:visible; }
+    .sol-tab{ padding:10px 16px; font-size:14px; background:#fff; border:1px solid var(--c-border); box-shadow:0 2px 8px rgba(14,23,51,.05); }
     .problem-row{ gap:18px; padding:26px 6px; }
     .p-ico{ width:48px; height:48px; border-radius:14px; }
     .p-ico svg{ width:22px; height:22px; }
@@ -556,15 +550,11 @@
   </div>
 </header>
 
-<!-- ============ HERO ============ -->
-<section class="hero">
-  <picture>
-    <source media="(max-width:768px)" srcset="assets/hero-image-mobile.png">
-    <img class="hero-bg" src="assets/hero-image-2.png" alt="Frota de caminhões A2O Sistemas">
-  </picture>
-  <div class="hero-scrim" aria-hidden="true"></div>
-  <div class="hero-inner">
-    <div class="hero-content">
+<!-- ============ HERO V2 (duas colunas: texto | caminhão) ============ -->
+<section class="hero-v2">
+  <img class="hero-v2-bg" src="assets/new-image-bg.png" alt="">
+  <div class="hero-v2-inner">
+    <div class="hero-v2-text">
       <span class="hero-pill"><span class="dot"></span> A2O Sistemas · TMS · Frota · Agro</span>
       <h1>Gestão logística integrada para quem move o <b>transporte do Brasil.</b></h1>
       <p class="hero-sub">Centralize a operação, emita documentos fiscais e tenha controle total da frota em um único sistema.</p>
@@ -576,6 +566,9 @@
         <a href="#solucoes" class="btn-hero-outline">Ver como funciona</a>
       </div>
       <p class="hero-micro">Mais de 30 anos atendendo o setor de transporte.</p>
+    </div>
+    <div class="hero-v2-media">
+      <img class="hero-v2-truck" src="assets/image-caminhao.png" alt="Frota de caminhões A2O Sistemas">
     </div>
   </div>
 </section>
@@ -872,7 +865,7 @@
 <!-- ============ BLOG / ARTIGOS · NORMAS · ATUALIZAÇÕES ============ -->
 <section class="section blog-section" id="blog">
   <div class="section-inner">
-    <div class="section-head center">
+    <div class="section-head">
       <span class="eyebrow">Blog · Artigos · Normas · Atualizações</span>
       <h2 class="section-title">Conteúdo técnico para quem vive a <span class="accent">operação de transporte</span></h2>
       <p class="section-lead">Explicações de normas, guias operacionais, mudanças fiscais e novidades do sistema, direto ao ponto.</p>
@@ -886,19 +879,18 @@
       <button class="blog-cat">Tecnologia e automação</button>
     </div>
 
-    <!-- Destaque principal -->
-    <article class="blog-featured">
-      <div class="bf-media"><img src="assets/conteudo-imagens/blog-fiscal.jpg" alt=""><span class="blog-tag">Normativas fiscais</span></div>
-      <div class="bf-body">
-        <span class="blog-meta">Destaque · 00 min de leitura</span>
-        <h3>O que muda na emissão de documentos fiscais e como se preparar</h3>
-        <p>Um guia direto sobre as principais mudanças na legislação de transporte e o que a sua operação precisa ajustar para continuar em conformidade.</p>
-        <span class="blog-more">Ler artigo →</span>
-      </div>
-    </article>
-
     <!-- Grid de artigos -->
     <div class="blog-grid">
+      <article class="blog-card">
+        <div class="blog-media"><img src="assets/conteudo-imagens/blog-fiscal.jpg" alt=""><span class="blog-tag">Normativas fiscais</span></div>
+        <div class="blog-body">
+          <span class="blog-meta">00 de mês · 2026</span>
+          <h3>O que muda na emissão de documentos fiscais e como se preparar</h3>
+          <p>As principais mudanças na legislação de transporte e o que ajustar para seguir em conformidade.</p>
+          <span class="blog-more">Ler mais →</span>
+        </div>
+      </article>
+
       <article class="blog-card">
         <div class="blog-media"><img src="assets/conteudo-imagens/blog-transporte.jpg" alt=""><span class="blog-tag">Transporte e logística</span></div>
         <div class="blog-body">
@@ -956,7 +948,7 @@
   <div class="footer-inner">
     <div class="footer-top">
       <div class="footer-brand">
-        <a href="#" class="logo"><span class="logo-mark">A2</span><span class="logo-text">A2O Sistemas</span></a>
+        <a href="#" class="logo"><img class="logo-img" src="assets/logo-branca.svg" alt="A2O Sistemas Gerenciais"></a>
         <p class="footer-tag">Gestão logística integrada: transporte, frota e agro em uma só plataforma.</p>
       </div>
       <div class="footer-col">
