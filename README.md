@@ -10,10 +10,11 @@ Arquivo único em HTML/CSS/JS, sem dependências além do Google Fonts. As image
 .
 ├── index.html            # página (servida pelo GitHub Pages)
 └── assets/
-    ├── logo.png
+    ├── logo-vetorizada.svg       # logo do menu
+    ├── logo-branca.svg           # logo do rodapé (fundo escuro)
     ├── divisor-hero.svg
-    ├── hero-image-2.png          # hero desktop
-    ├── hero-image-mobile.png     # hero mobile
+    ├── new-image-bg.png          # fundo da hero
+    ├── image-caminhao.png        # caminhão da hero
     ├── solucoes-imagens/         # imagens das soluções
     └── conteudo-imagens/         # imagens de blog e cases
 ```
