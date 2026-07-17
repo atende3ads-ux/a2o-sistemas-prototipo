@@ -453,8 +453,9 @@
     .hero-v2{ position:static; min-height:auto; padding:104px 20px 60px; }
     .hero-v2-inner{ flex-direction:column; gap:28px; }
     .hero-v2-text{ max-width:100%; }
+    /* flex:none anula o flex-basis 420px (que virava altura da coluna e deixava um vão em volta da imagem) */
     /* caminhão sangra até as bordas (compensa o padding lateral da seção) pra ganhar presença no mobile */
-    .hero-v2-media{ width:auto; margin:0 -20px; }
+    .hero-v2-media{ flex:none; width:auto; margin:0 -20px; }
     .hero-v2-truck{ max-width:100%; }
     .hero-v2 h1{ font-size:30px; }
     .hero-actions{ flex-direction:column; align-items:stretch; }
