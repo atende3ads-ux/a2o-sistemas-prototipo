@@ -221,7 +221,9 @@
   .cursor-img{ position:fixed; left:0; top:0; width:250px; aspect-ratio:4/3; border-radius:16px; overflow:hidden; pointer-events:none; z-index:90; opacity:0; transform:translate(24px,24px) scale(.88) rotate(-2deg); transition:opacity .22s ease, transform .28s cubic-bezier(.22,1,.36,1); box-shadow:0 30px 60px rgba(14,23,51,.30), 0 6px 16px rgba(14,23,51,.16); }
   .cursor-img.on{ opacity:1; transform:translate(24px,24px) scale(1) rotate(0deg); }
   .cursor-img img{ position:absolute; inset:0; width:100%; height:100%; object-fit:cover; }
-  @media (hover:none){ .cursor-img{ display:none; } }
+  .cursor-tag{ position:fixed; left:0; top:0; width:120px; height:auto; pointer-events:none; z-index:90; opacity:0; transform:translate(20px,20px) scale(.85); transition:opacity .22s ease, transform .28s cubic-bezier(.22,1,.36,1); filter:drop-shadow(0 14px 28px rgba(14,23,51,.35)); }
+  .cursor-tag.on{ opacity:1; transform:translate(20px,20px) scale(1); }
+  @media (hover:none){ .cursor-img, .cursor-tag{ display:none; } }
 
   /* ============ SOLUTION CARDS ============ */
   .sol-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:22px; }
@@ -289,34 +291,20 @@
   .hscroll-progress span{ position:absolute; left:0; top:0; height:100%; width:0%; background:var(--grad-brand); border-radius:999px; }
   .soon-wrap{ padding:0 32px 4px; }
 
-  /* ============ CONFORMIDADE (dark split) ============ */
-  .split-grid{ display:grid; grid-template-columns:1.05fr 1fr; gap:60px; align-items:center; }
-  .conf-list{ list-style:none; display:flex; flex-direction:column; gap:14px; margin-top:28px; }
-  .conf-list li{ display:flex; align-items:center; gap:14px; padding:16px 20px; background:rgba(255,255,255,.05); border:1px solid rgba(255,255,255,.1); border-radius:12px; color:rgba(255,255,255,.9); font-size:15px; font-weight:500; }
-  .conf-check{ width:26px; height:26px; border-radius:50%; background:linear-gradient(135deg,#1D3FA3 0%,#28C7F7 100%); color:#fff; display:grid; place-items:center; font-size:13px; font-weight:700; flex-shrink:0; }
-  .conf-visual{ background:rgba(255,255,255,.04); border:1px solid rgba(255,255,255,.1); border-radius:18px; padding:28px; backdrop-filter:blur(12px); }
-  .conf-doc{ display:flex; align-items:center; gap:14px; padding:16px; background:rgba(255,255,255,.05); border:1px solid rgba(255,255,255,.08); border-radius:12px; margin-bottom:12px; }
-  .conf-doc:last-child{ margin-bottom:0; }
-  .conf-doc-ico{ width:40px; height:40px; border-radius:10px; background:rgba(40,199,247,.15); color:var(--c-cyan-light); display:grid; place-items:center; flex-shrink:0; font-weight:700; font-size:12px; }
-  .conf-doc-main{ flex:1; }
-  .conf-doc-main b{ font-size:14px; color:#fff; font-weight:600; }
-  .conf-doc-main span{ display:block; font-size:12px; color:rgba(255,255,255,.6); }
-  .conf-doc-tag{ font-size:11px; font-weight:600; color:#34D399; }
-  /* conformidade: seção mais alta + bullets trabalhados à direita */
-  .conf-section{ padding-top:150px; padding-bottom:150px; position:relative; z-index:2; }
-  .conf-section .split-grid{ align-items:center; gap:72px; }
-  .conf-left .section-lead{ margin-bottom:0; }
-  .conf-cta{ display:inline-flex; align-items:center; gap:10px; margin-top:30px; background:var(--grad-brand); color:#fff; border-radius:70px; padding:15px 28px; font-weight:600; font-size:15px; box-shadow:0 6px 18px rgba(29,63,163,.32); transition:transform .2s, box-shadow .2s; }
+  /* ============ CONFORMIDADE (dark, centralizada em cards) ============ */
+  .conf-section{ padding-top:130px; padding-bottom:130px; position:relative; z-index:2; }
+  .conf-section .section-head{ margin-bottom:48px; }
+  .conf-cards{ display:grid; grid-template-columns:repeat(3,1fr); gap:22px; max-width:1140px; margin:0 auto; }
+  .conf-card{ background:rgba(255,255,255,.03); border:1px solid rgba(255,255,255,.10); border-radius:16px; padding:38px 28px 34px; text-align:center; transition:background .25s, border-color .25s, transform .25s; }
+  .conf-card:hover{ background:rgba(255,255,255,.06); border-color:rgba(40,199,247,.35); transform:translateY(-4px); }
+  .conf-card-ico{ height:64px; display:grid; place-items:center; margin-bottom:16px; }
+  .conf-card-ico img{ display:block; width:auto; }
+  .conf-card h4{ font-size:16.5px; font-weight:700; color:#fff; line-height:1.35; letter-spacing:-.01em; margin:0 auto 10px; max-width:22ch; }
+  .conf-card p{ font-size:13.5px; color:rgba(255,255,255,.62); line-height:1.62; margin:0 auto; max-width:36ch; }
+  .conf-cta-row{ text-align:center; margin-top:46px; }
+  .conf-cta{ display:inline-flex; align-items:center; gap:10px; background:var(--grad-brand); color:#fff; border-radius:70px; padding:15px 28px; font-weight:600; font-size:15px; box-shadow:0 6px 18px rgba(29,63,163,.32); transition:transform .2s, box-shadow .2s; }
   .conf-cta:hover{ transform:translateY(-1px); box-shadow:0 10px 24px rgba(29,63,163,.4); }
-  .conf-feats{ display:flex; flex-direction:column; gap:18px; }
-  .conf-feat{ position:relative; display:flex; gap:18px; align-items:flex-start; padding:26px 26px; background:rgba(255,255,255,.05); border:1px solid rgba(255,255,255,.1); border-radius:18px; overflow:hidden; transition:transform .25s, background .25s, border-color .25s; }
-  .conf-feat::before{ content:''; position:absolute; left:0; top:0; bottom:0; width:3px; background:var(--grad-brand); opacity:0; transition:opacity .25s; }
-  .conf-feat:hover{ background:rgba(255,255,255,.08); border-color:rgba(40,199,247,.35); transform:translateX(6px); }
-  .conf-feat:hover::before{ opacity:1; }
-  .conf-feat-ico{ width:50px; height:50px; border-radius:14px; background:var(--grad-brand); display:grid; place-items:center; color:#fff; flex-shrink:0; box-shadow:0 10px 22px rgba(29,63,163,.3); }
-  .conf-feat-ico svg{ width:24px; height:24px; }
-  .conf-feat h4{ font-size:17.5px; font-weight:700; color:#fff; margin-bottom:5px; letter-spacing:-.01em; }
-  .conf-feat p{ font-size:14px; color:rgba(255,255,255,.68); line-height:1.55; }
+
 
   /* ============ CASES (depoimentos · resultados) ============ */
   .cases-section{ background:var(--c-bg); position:relative; z-index:2; }
@@ -327,15 +315,9 @@
   .case-tile img{ position:absolute; inset:0; width:100%; height:100%; object-fit:cover; transition:transform 1.1s cubic-bezier(.22,1,.36,1); }
   .case-tile:hover img{ transform:scale(1.09); }
   .case-tile::after{ content:''; position:absolute; inset:0; z-index:1; pointer-events:none; background:linear-gradient(to top, rgba(8,14,38,.94) 0%, rgba(8,14,38,.6) 26%, rgba(8,14,38,.12) 52%, transparent 74%); transition:background .65s ease; }
-  .case-tile:hover::after{ background:linear-gradient(to top, rgba(8,14,38,.97) 0%, rgba(8,14,38,.72) 36%, rgba(8,14,38,.28) 62%, rgba(8,14,38,.05) 88%); }
-  .case-tag{ position:absolute; top:18px; left:18px; z-index:3; font-size:11px; font-weight:700; letter-spacing:.05em; text-transform:uppercase; color:#fff; background:rgba(255,255,255,.14); -webkit-backdrop-filter:blur(8px); backdrop-filter:blur(8px); border:1px solid rgba(255,255,255,.25); border-radius:999px; padding:6px 13px; }
-  .case-content{ position:absolute; left:0; right:0; bottom:0; z-index:3; padding:26px; }
-  .case-content h3{ font-size:21px; font-weight:800; line-height:1.22; letter-spacing:-.01em; color:#fff; }
-  .case-hidden{ max-height:0; opacity:0; transform:translateY(10px); overflow:hidden; transition:max-height .8s cubic-bezier(.22,1,.36,1), opacity .6s ease, transform .75s cubic-bezier(.22,1,.36,1); }
-  .case-tile:hover .case-hidden, .case-tile:focus-visible .case-hidden{ max-height:150px; opacity:1; transform:none; }
-  .case-hidden p{ font-size:14px; color:rgba(255,255,255,.85); line-height:1.55; margin-top:10px; margin-bottom:12px; }
-  .case-more{ display:inline-flex; align-items:center; gap:6px; font-size:13.5px; font-weight:700; color:var(--c-cyan-light); }
-  @media (hover:none){ .case-hidden{ max-height:150px; opacity:1; transform:none; } }
+  .case-tag{ display:inline-flex; align-items:center; font-size:11px; font-weight:700; letter-spacing:.05em; text-transform:uppercase; color:#fff; background:rgba(255,255,255,.16); -webkit-backdrop-filter:blur(8px); backdrop-filter:blur(8px); border:1px solid rgba(255,255,255,.25); border-radius:999px; padding:6px 13px; margin-bottom:12px; }
+  .case-content{ position:absolute; left:0; right:0; bottom:0; z-index:3; padding:28px 26px; display:flex; flex-direction:column; align-items:flex-start; }
+  .case-content h3{ font-size:clamp(20px,1.5vw,26px); font-weight:600; line-height:1.3; letter-spacing:-.012em; color:#fff; }
   .cases-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:22px; }
   .case-card{ position:relative; background:#fff; border:1px solid var(--c-border); border-radius:20px; padding:30px 28px; display:flex; flex-direction:column; gap:18px; overflow:hidden; transition:transform .25s, box-shadow .25s, border-color .25s; }
   .case-card::after{ content:'\201C'; position:absolute; top:6px; right:22px; font-family:Georgia,serif; font-size:92px; line-height:1; color:rgba(29,63,163,.07); }
@@ -426,6 +408,7 @@
     .hero-v2-truck{ max-width:480px; }
     .header-actions .header-cta{ display:none; }
     .split-grid{ grid-template-columns:1fr; gap:48px; }
+    .conf-cards{ grid-template-columns:1fr; max-width:560px; }
     .stats-strip{ grid-template-columns:repeat(2,1fr); gap:32px 0; }
     .stat-item:nth-child(3){ border-left:none; }
     .sol-grid{ grid-template-columns:1fr 1fr; }
@@ -770,45 +753,34 @@
 <!-- ============ CONFORMIDADE (dark) ============ -->
 <section class="section section-bg-dark conf-section" id="sobre">
   <div class="section-inner">
-    <div class="split-grid">
-      <div class="conf-left">
-        <span class="eyebrow">Conformidade</span>
-        <h2 class="section-title">Atualizações fiscais e conformidade <span class="accent">sempre em dia</span>.</h2>
-        <p class="section-lead">A A2O acompanha as mudanças nas normas e mantém o sistema atualizado para que sua operação siga em conformidade, sem sobrecarregar a equipe.</p>
-        <a href="contato.html" class="conf-cta">Falar com um especialista
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-        </a>
-      </div>
+    <div class="section-head center">
+      <span class="eyebrow">Conformidade</span>
+      <h2 class="section-title">Atualizações fiscais e conformidade <span class="accent">sempre em dia</span>.</h2>
+      <p class="section-lead" style="max-width:480px;">A A2O acompanha as mudanças nas normas e mantém o sistema atualizado para que sua operação siga em conformidade, sem sobrecarregar a equipe.</p>
+    </div>
 
-      <div class="conf-feats">
-        <div class="conf-feat">
-          <div class="conf-feat-ico">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 4 23 10 17 10"/><polyline points="1 20 1 14 7 14"/><path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"/></svg>
-          </div>
-          <div>
-            <h4>Acompanhamento de mudanças fiscais</h4>
-            <p>A plataforma se atualiza sozinha quando a legislação muda, sem esforço da sua equipe.</p>
-          </div>
-        </div>
-        <div class="conf-feat">
-          <div class="conf-feat-ico">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><path d="M9 15l2 2 4-4"/></svg>
-          </div>
-          <div>
-            <h4>Documentos eletrônicos atualizados</h4>
-            <p>CT-e, MDF-e e demais documentos sempre emitidos na versão vigente da norma.</p>
-          </div>
-        </div>
-        <div class="conf-feat">
-          <div class="conf-feat-ico">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg>
-          </div>
-          <div>
-            <h4>Segurança e estabilidade da plataforma</h4>
-            <p>Ambiente seguro e disponível para a operação não parar em nenhum momento.</p>
-          </div>
-        </div>
+    <div class="conf-cards">
+      <div class="conf-card">
+        <span class="conf-card-ico"><img src="assets/icons-home/icon-03.svg" alt="" style="height:78px;"></span>
+        <h4>Acompanhamento de mudanças fiscais</h4>
+        <p>A plataforma se atualiza sozinha quando a legislação muda, sem esforço da sua equipe.</p>
       </div>
+      <div class="conf-card">
+        <span class="conf-card-ico"><img src="assets/icons-home/icon-02.svg" alt="" style="height:82px;"></span>
+        <h4>Documentos eletrônicos atualizados</h4>
+        <p>CT-e, MDF-e e demais documentos sempre emitidos na versão vigente da norma.</p>
+      </div>
+      <div class="conf-card">
+        <span class="conf-card-ico"><img src="assets/icons-home/icon-01.svg" alt="" style="height:56px;"></span>
+        <h4>Segurança e estabilidade da plataforma</h4>
+        <p>Ambiente seguro e disponível para a operação não parar em nenhum momento.</p>
+      </div>
+    </div>
+
+    <div class="conf-cta-row">
+      <a href="contato.html" class="conf-cta">Falar com um especialista
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+      </a>
     </div>
   </div>
 </section>
@@ -825,37 +797,25 @@
     <div class="cases-tiles">
       <a class="case-tile" href="case.html">
         <img src="assets/conteudo-imagens/case-transporte.jpg" alt="Case Transportadora Exemplo">
-        <span class="case-tag">A2O TMS</span>
         <div class="case-content">
+          <span class="case-tag">A2O TMS</span>
           <h3>Como a Transportadora Exemplo centralizou a emissão fiscal</h3>
-          <div class="case-hidden">
-            <p>Da emissão de CT-e ao controle de viagens, tudo em um sistema só.</p>
-            <span class="case-more">Ver case →</span>
-          </div>
         </div>
       </a>
 
       <a class="case-tile" href="case.html">
         <img src="assets/conteudo-imagens/case-frota.jpg" alt="Case Empresa Exemplo">
-        <span class="case-tag">A2O Frota</span>
         <div class="case-content">
+          <span class="case-tag">A2O Frota</span>
           <h3>Manutenção preventiva sob controle na Empresa Exemplo</h3>
-          <div class="case-hidden">
-            <p>Custos por veículo e histórico completo deixaram a frota muito menos parada.</p>
-            <span class="case-more">Ver case →</span>
-          </div>
         </div>
       </a>
 
       <a class="case-tile" href="case.html">
         <img src="assets/conteudo-imagens/case-agro.jpg" alt="Case Cooperativa Exemplo">
-        <span class="case-tag">A2O Agro</span>
         <div class="case-content">
+          <span class="case-tag">A2O Agro</span>
           <h3>Da balança à expedição integradas na Cooperativa Exemplo</h3>
-          <div class="case-hidden">
-            <p>Balança, estoque e fiscal conversando em um só sistema agilizaram a safra.</p>
-            <span class="case-more">Ver case →</span>
-          </div>
         </div>
       </a>
     </div>
@@ -1065,45 +1025,52 @@
     curP = targetP; tick();
   })();
 
-  // "O problema": imagem acompanha o cursor sobre cada item (data-img)
+  // Elemento que acompanha o cursor: fotos em "O problema" e tag "Ver case" nos cases
   (function () {
     if (window.matchMedia('(hover: none)').matches) return;
-    var rows = [].slice.call(document.querySelectorAll('.problem-row[data-img]'));
-    if (!rows.length) return;
-    var box = document.createElement('div');
-    box.className = 'cursor-img';
-    box.setAttribute('aria-hidden', 'true');
-    var img = document.createElement('img');
-    img.alt = '';
-    box.appendChild(img);
-    document.body.appendChild(box);
-    var tx = 0, ty = 0, cx = 0, cy = 0, raf = null, visible = false;
-    var EASE = 0.09; // menor = imagem "correndo atrás" do cursor por mais tempo (mais suave)
-    function tick() {
-      cx += (tx - cx) * EASE;
-      cy += (ty - cy) * EASE;
-      box.style.left = cx.toFixed(1) + 'px';
-      box.style.top = cy.toFixed(1) + 'px';
-      raf = (visible || Math.abs(tx - cx) + Math.abs(ty - cy) > 0.4) ? requestAnimationFrame(tick) : null;
+    var EASE = 0.09; // menor = mais atraso/suavidade na perseguição
+    function follow(nodes, build, getSrc) {
+      if (!nodes.length) return;
+      var box = build();
+      box.setAttribute('aria-hidden', 'true');
+      document.body.appendChild(box);
+      var img = box.tagName === 'IMG' ? box : box.querySelector('img');
+      var tx = 0, ty = 0, cx = 0, cy = 0, raf = null, visible = false;
+      function tick() {
+        cx += (tx - cx) * EASE;
+        cy += (ty - cy) * EASE;
+        box.style.left = cx.toFixed(1) + 'px';
+        box.style.top = cy.toFixed(1) + 'px';
+        raf = (visible || Math.abs(tx - cx) + Math.abs(ty - cy) > 0.4) ? requestAnimationFrame(tick) : null;
+      }
+      nodes.forEach(function (el) {
+        el.addEventListener('mouseenter', function (e) {
+          var src = getSrc(el);
+          if (src) img.src = src;
+          tx = cx = e.clientX; ty = cy = e.clientY; // nasce sob o cursor
+          box.style.left = cx + 'px'; box.style.top = cy + 'px';
+          visible = true;
+          box.classList.add('on');
+          if (!raf) raf = requestAnimationFrame(tick);
+        });
+        el.addEventListener('mousemove', function (e) {
+          tx = e.clientX; ty = e.clientY;
+          if (!raf) raf = requestAnimationFrame(tick);
+        });
+        el.addEventListener('mouseleave', function () {
+          visible = false;
+          box.classList.remove('on');
+        });
+      });
     }
-    rows.forEach(function (row) {
-      row.addEventListener('mouseenter', function (e) {
-        img.src = row.getAttribute('data-img');
-        tx = cx = e.clientX; ty = cy = e.clientY; // nasce sob o cursor, sem "voar" de longe
-        box.style.left = cx + 'px'; box.style.top = cy + 'px'; // posiciona já no enter (sem esperar o 1º frame)
-        visible = true;
-        box.classList.add('on');
-        if (!raf) raf = requestAnimationFrame(tick);
-      });
-      row.addEventListener('mousemove', function (e) {
-        tx = e.clientX; ty = e.clientY;
-        if (!raf) raf = requestAnimationFrame(tick);
-      });
-      row.addEventListener('mouseleave', function () {
-        visible = false;
-        box.classList.remove('on');
-      });
-    });
+    // "O problema": uma foto por item (data-img)
+    follow([].slice.call(document.querySelectorAll('.problem-row[data-img]')),
+      function () { var d = document.createElement('div'); d.className = 'cursor-img'; var i = document.createElement('img'); i.alt = ''; d.appendChild(i); return d; },
+      function (el) { return el.getAttribute('data-img'); });
+    // Cases: tag única "Ver case"
+    follow([].slice.call(document.querySelectorAll('.case-tile')),
+      function () { var i = document.createElement('img'); i.className = 'cursor-tag'; i.src = 'assets/tag-mouse-case.svg'; i.alt = ''; return i; },
+      function () { return null; });
   })();
 </script>
 
