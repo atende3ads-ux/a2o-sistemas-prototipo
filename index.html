@@ -196,8 +196,8 @@
   @keyframes logos-scroll{ from{ transform:translateX(0); } to{ transform:translateX(-50%); } }
   @media (prefers-reduced-motion: reduce){ .logos-track{ animation:none; } }
   .logo-ph{ flex:0 0 200px; margin-right:18px; height:66px; background:#fff; border:1px solid var(--c-border); border-radius:12px; display:grid; place-items:center; color:var(--c-text-muted); font-size:12px; }
-  .logo-ph svg{ width:118px; height:auto; opacity:.8; transition:opacity .2s; }
-  .logo-ph:hover svg{ opacity:1; }
+  .logo-ph img{ max-width:150px; max-height:38px; width:auto; height:auto; object-fit:contain; opacity:.85; transition:opacity .2s; }
+  .logo-ph:hover img{ opacity:1; }
 
   /* ============ PROBLEM (editorial + parallax/pin) ============ */
   .problem-section{ background:var(--c-bg); position:sticky; top:0; z-index:1; overflow:hidden; min-height:100vh; display:grid; place-items:center; }
@@ -211,16 +211,17 @@
   .problem-note b{ color:var(--c-navy-900); font-weight:700; }
 
   .problem-rows{ list-style:none; }
-  .problem-row{ position:relative; display:grid; grid-template-columns:auto 1fr; gap:30px; align-items:center; padding:32px 10px 32px 0; border-top:1px solid var(--c-border); transition:padding-left .35s cubic-bezier(.2,.7,.3,1); }
+  .problem-row{ position:relative; display:grid; grid-template-columns:auto 1fr; gap:30px; align-items:center; padding:32px 10px 32px 0; border-top:1px solid var(--c-border); }
   .problem-row:last-child{ border-bottom:1px solid var(--c-border); }
-  .problem-row::after{ content:''; position:absolute; left:0; top:-1px; width:0; height:2px; background:var(--grad-brand); transition:width .4s cubic-bezier(.2,.7,.3,1); }
-  .problem-row:hover{ padding-left:18px; }
-  .problem-row:hover::after{ width:70px; }
-  .p-ico{ width:56px; height:56px; border-radius:16px; display:grid; place-items:center; background:rgba(29,63,163,.06); border:1px solid rgba(29,63,163,.12); color:var(--c-blue); transition:background .35s ease, color .35s ease, border-color .35s ease, box-shadow .35s ease; }
+  .p-ico{ width:56px; height:56px; border-radius:16px; display:grid; place-items:center; background:rgba(29,63,163,.06); border:1px solid rgba(29,63,163,.12); color:var(--c-blue); }
   .p-ico svg{ width:26px; height:26px; }
-  .problem-row:hover .p-ico{ background:var(--grad-brand); border-color:transparent; color:#fff; box-shadow:0 10px 22px rgba(29,63,163,.28); }
   .p-body h3{ font-size:19.5px; font-weight:700; color:var(--c-navy-900); margin-bottom:6px; letter-spacing:-.015em; }
   .p-body p{ font-size:15px; color:var(--c-text-muted); line-height:1.6; max-width:48ch; }
+  /* imagem que acompanha o cursor sobre cada item (uma por linha, via data-img) */
+  .cursor-img{ position:fixed; left:0; top:0; width:250px; aspect-ratio:4/3; border-radius:16px; overflow:hidden; pointer-events:none; z-index:90; opacity:0; transform:translate(-50%,-50%) scale(.88) rotate(-2deg); transition:opacity .22s ease, transform .28s cubic-bezier(.22,1,.36,1); box-shadow:0 30px 60px rgba(14,23,51,.30), 0 6px 16px rgba(14,23,51,.16); }
+  .cursor-img.on{ opacity:1; transform:translate(-50%,-50%) scale(1) rotate(0deg); }
+  .cursor-img img{ position:absolute; inset:0; width:100%; height:100%; object-fit:cover; }
+  @media (hover:none){ .cursor-img{ display:none; } }
 
   /* ============ SOLUTION CARDS ============ */
   .sol-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:22px; }
@@ -596,18 +597,18 @@
   <div class="logos-head">Empresas que confiam na A2O</div>
   <div class="logos-marquee">
     <div class="logos-track">
-      <div class="logo-ph"><svg viewBox="0 0 140 32" xmlns="http://www.w3.org/2000/svg"><g fill="#98a2b3"><circle cx="9" cy="16" r="9"/><circle cx="18" cy="16" r="9" fill-opacity=".45"/></g><text x="34" y="21" font-family="Figtree,sans-serif" font-size="16" font-weight="700" fill="#667085" letter-spacing="-.3">Logo<tspan fill="#98a2b3" font-weight="500">ipsum</tspan></text></svg></div>
-      <div class="logo-ph"><svg viewBox="0 0 140 32" xmlns="http://www.w3.org/2000/svg"><g fill="#98a2b3"><rect x="1" y="7" width="18" height="18" rx="5"/><circle cx="15" cy="21" r="4.5" fill="#fff"/></g><text x="34" y="21" font-family="Figtree,sans-serif" font-size="16" font-weight="700" fill="#667085" letter-spacing="-.3">Logo<tspan fill="#98a2b3" font-weight="500">ipsum</tspan></text></svg></div>
-      <div class="logo-ph"><svg viewBox="0 0 140 32" xmlns="http://www.w3.org/2000/svg"><path d="M11 5 L21 25 H1 Z" fill="#98a2b3"/><text x="34" y="21" font-family="Figtree,sans-serif" font-size="16" font-weight="700" fill="#667085" letter-spacing="-.3">Logo<tspan fill="#98a2b3" font-weight="500">ipsum</tspan></text></svg></div>
-      <div class="logo-ph"><svg viewBox="0 0 140 32" xmlns="http://www.w3.org/2000/svg"><path d="M11 4l9 5.2v10.4L11 25l-9-5.2V9.2z" fill="none" stroke="#98a2b3" stroke-width="2.4"/><text x="34" y="21" font-family="Figtree,sans-serif" font-size="16" font-weight="700" fill="#667085" letter-spacing="-.3">Logo<tspan fill="#98a2b3" font-weight="500">ipsum</tspan></text></svg></div>
-      <div class="logo-ph"><svg viewBox="0 0 140 32" xmlns="http://www.w3.org/2000/svg"><g fill="#98a2b3"><rect x="1" y="16" width="5" height="9" rx="1.5"/><rect x="8.5" y="10" width="5" height="15" rx="1.5"/><rect x="16" y="4" width="5" height="21" rx="1.5"/></g><text x="34" y="21" font-family="Figtree,sans-serif" font-size="16" font-weight="700" fill="#667085" letter-spacing="-.3">Logo<tspan fill="#98a2b3" font-weight="500">ipsum</tspan></text></svg></div>
-      <div class="logo-ph"><svg viewBox="0 0 140 32" xmlns="http://www.w3.org/2000/svg"><g fill="none" stroke="#98a2b3" stroke-width="3"><path d="M3 24a13 13 0 0 1 13-13"/></g><circle cx="18" cy="24" r="3" fill="#98a2b3"/><text x="34" y="21" font-family="Figtree,sans-serif" font-size="16" font-weight="700" fill="#667085" letter-spacing="-.3">Logo<tspan fill="#98a2b3" font-weight="500">ipsum</tspan></text></svg></div>
-      <div class="logo-ph" aria-hidden="true"><svg viewBox="0 0 140 32" xmlns="http://www.w3.org/2000/svg"><g fill="#98a2b3"><circle cx="9" cy="16" r="9"/><circle cx="18" cy="16" r="9" fill-opacity=".45"/></g><text x="34" y="21" font-family="Figtree,sans-serif" font-size="16" font-weight="700" fill="#667085" letter-spacing="-.3">Logo<tspan fill="#98a2b3" font-weight="500">ipsum</tspan></text></svg></div>
-      <div class="logo-ph" aria-hidden="true"><svg viewBox="0 0 140 32" xmlns="http://www.w3.org/2000/svg"><g fill="#98a2b3"><rect x="1" y="7" width="18" height="18" rx="5"/><circle cx="15" cy="21" r="4.5" fill="#fff"/></g><text x="34" y="21" font-family="Figtree,sans-serif" font-size="16" font-weight="700" fill="#667085" letter-spacing="-.3">Logo<tspan fill="#98a2b3" font-weight="500">ipsum</tspan></text></svg></div>
-      <div class="logo-ph" aria-hidden="true"><svg viewBox="0 0 140 32" xmlns="http://www.w3.org/2000/svg"><path d="M11 5 L21 25 H1 Z" fill="#98a2b3"/><text x="34" y="21" font-family="Figtree,sans-serif" font-size="16" font-weight="700" fill="#667085" letter-spacing="-.3">Logo<tspan fill="#98a2b3" font-weight="500">ipsum</tspan></text></svg></div>
-      <div class="logo-ph" aria-hidden="true"><svg viewBox="0 0 140 32" xmlns="http://www.w3.org/2000/svg"><path d="M11 4l9 5.2v10.4L11 25l-9-5.2V9.2z" fill="none" stroke="#98a2b3" stroke-width="2.4"/><text x="34" y="21" font-family="Figtree,sans-serif" font-size="16" font-weight="700" fill="#667085" letter-spacing="-.3">Logo<tspan fill="#98a2b3" font-weight="500">ipsum</tspan></text></svg></div>
-      <div class="logo-ph" aria-hidden="true"><svg viewBox="0 0 140 32" xmlns="http://www.w3.org/2000/svg"><g fill="#98a2b3"><rect x="1" y="16" width="5" height="9" rx="1.5"/><rect x="8.5" y="10" width="5" height="15" rx="1.5"/><rect x="16" y="4" width="5" height="21" rx="1.5"/></g><text x="34" y="21" font-family="Figtree,sans-serif" font-size="16" font-weight="700" fill="#667085" letter-spacing="-.3">Logo<tspan fill="#98a2b3" font-weight="500">ipsum</tspan></text></svg></div>
-      <div class="logo-ph" aria-hidden="true"><svg viewBox="0 0 140 32" xmlns="http://www.w3.org/2000/svg"><g fill="none" stroke="#98a2b3" stroke-width="3"><path d="M3 24a13 13 0 0 1 13-13"/></g><circle cx="18" cy="24" r="3" fill="#98a2b3"/><text x="34" y="21" font-family="Figtree,sans-serif" font-size="16" font-weight="700" fill="#667085" letter-spacing="-.3">Logo<tspan fill="#98a2b3" font-weight="500">ipsum</tspan></text></svg></div>
+      <div class="logo-ph"><img src="assets/logo-clientes/logo-01.png" alt="Cesar"></div>
+      <div class="logo-ph"><img src="assets/logo-clientes/logo-02.png" alt="Transzilli Expresso e Logística"></div>
+      <div class="logo-ph"><img src="assets/logo-clientes/logo-03.png" alt="TransBono"></div>
+      <div class="logo-ph"><img src="assets/logo-clientes/logo-04.png" alt="Grupo RG Transportes"></div>
+      <div class="logo-ph"><img src="assets/logo-clientes/logo-05.png" alt="Dalastra Logística"></div>
+      <div class="logo-ph"><img src="assets/logo-clientes/logo-06.png" alt="Fokus"></div>
+      <div class="logo-ph" aria-hidden="true"><img src="assets/logo-clientes/logo-01.png" alt="Cesar"></div>
+      <div class="logo-ph" aria-hidden="true"><img src="assets/logo-clientes/logo-02.png" alt="Transzilli Expresso e Logística"></div>
+      <div class="logo-ph" aria-hidden="true"><img src="assets/logo-clientes/logo-03.png" alt="TransBono"></div>
+      <div class="logo-ph" aria-hidden="true"><img src="assets/logo-clientes/logo-04.png" alt="Grupo RG Transportes"></div>
+      <div class="logo-ph" aria-hidden="true"><img src="assets/logo-clientes/logo-05.png" alt="Dalastra Logística"></div>
+      <div class="logo-ph" aria-hidden="true"><img src="assets/logo-clientes/logo-06.png" alt="Fokus"></div>
     </div>
   </div>
 </section>
@@ -623,21 +624,21 @@
     </div>
 
     <ol class="problem-rows">
-      <li class="problem-row">
+      <li class="problem-row" data-img="assets/conteudo-imagens/blog-fiscal.jpg">
         <span class="p-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg></span>
         <div class="p-body">
           <h3>Documentos fiscais manuais</h3>
           <p>Emissão de CT-e e MDF-e fora do sistema gera erro, retrabalho e atraso na operação.</p>
         </div>
       </li>
-      <li class="problem-row">
+      <li class="problem-row" data-img="assets/conteudo-imagens/case-frota.jpg">
         <span class="p-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg></span>
         <div class="p-body">
           <h3>Falta de controle da frota</h3>
           <p>Custos, manutenção e abastecimento sem acompanhamento e sem histórico organizado.</p>
         </div>
       </li>
-      <li class="problem-row">
+      <li class="problem-row" data-img="assets/conteudo-imagens/blog-atualizacoes.jpg">
         <span class="p-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14.5" y="6" width="6" height="6" rx="1.5"/><rect x="7" y="14.5" width="7" height="7" rx="1.5"/></svg></span>
         <div class="p-body">
           <h3>Dados espalhados</h3>
@@ -1062,6 +1063,47 @@
     window.addEventListener('resize', computeTarget);
     computeTarget();
     curP = targetP; tick();
+  })();
+
+  // "O problema": imagem acompanha o cursor sobre cada item (data-img)
+  (function () {
+    if (window.matchMedia('(hover: none)').matches) return;
+    var rows = [].slice.call(document.querySelectorAll('.problem-row[data-img]'));
+    if (!rows.length) return;
+    var box = document.createElement('div');
+    box.className = 'cursor-img';
+    box.setAttribute('aria-hidden', 'true');
+    var img = document.createElement('img');
+    img.alt = '';
+    box.appendChild(img);
+    document.body.appendChild(box);
+    var tx = 0, ty = 0, cx = 0, cy = 0, raf = null, visible = false;
+    var EASE = 0.16; // menor = imagem "correndo atrás" do cursor por mais tempo
+    function tick() {
+      cx += (tx - cx) * EASE;
+      cy += (ty - cy) * EASE;
+      box.style.left = cx.toFixed(1) + 'px';
+      box.style.top = cy.toFixed(1) + 'px';
+      raf = (visible || Math.abs(tx - cx) + Math.abs(ty - cy) > 0.4) ? requestAnimationFrame(tick) : null;
+    }
+    rows.forEach(function (row) {
+      row.addEventListener('mouseenter', function (e) {
+        img.src = row.getAttribute('data-img');
+        tx = cx = e.clientX; ty = cy = e.clientY; // nasce sob o cursor, sem "voar" de longe
+        box.style.left = cx + 'px'; box.style.top = cy + 'px'; // posiciona já no enter (sem esperar o 1º frame)
+        visible = true;
+        box.classList.add('on');
+        if (!raf) raf = requestAnimationFrame(tick);
+      });
+      row.addEventListener('mousemove', function (e) {
+        tx = e.clientX; ty = e.clientY;
+        if (!raf) raf = requestAnimationFrame(tick);
+      });
+      row.addEventListener('mouseleave', function () {
+        visible = false;
+        box.classList.remove('on');
+      });
+    });
   })();
 </script>
 
