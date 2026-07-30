@@ -218,8 +218,8 @@
   .p-body h3{ font-size:19.5px; font-weight:700; color:var(--c-navy-900); margin-bottom:6px; letter-spacing:-.015em; }
   .p-body p{ font-size:15px; color:var(--c-text-muted); line-height:1.6; max-width:48ch; }
   /* imagem que acompanha o cursor sobre cada item (uma por linha, via data-img) */
-  .cursor-img{ position:fixed; left:0; top:0; width:250px; aspect-ratio:4/3; border-radius:16px; overflow:hidden; pointer-events:none; z-index:90; opacity:0; transform:translate(-50%,-50%) scale(.88) rotate(-2deg); transition:opacity .22s ease, transform .28s cubic-bezier(.22,1,.36,1); box-shadow:0 30px 60px rgba(14,23,51,.30), 0 6px 16px rgba(14,23,51,.16); }
-  .cursor-img.on{ opacity:1; transform:translate(-50%,-50%) scale(1) rotate(0deg); }
+  .cursor-img{ position:fixed; left:0; top:0; width:250px; aspect-ratio:4/3; border-radius:16px; overflow:hidden; pointer-events:none; z-index:90; opacity:0; transform:translate(24px,24px) scale(.88) rotate(-2deg); transition:opacity .22s ease, transform .28s cubic-bezier(.22,1,.36,1); box-shadow:0 30px 60px rgba(14,23,51,.30), 0 6px 16px rgba(14,23,51,.16); }
+  .cursor-img.on{ opacity:1; transform:translate(24px,24px) scale(1) rotate(0deg); }
   .cursor-img img{ position:absolute; inset:0; width:100%; height:100%; object-fit:cover; }
   @media (hover:none){ .cursor-img{ display:none; } }
 
@@ -1078,7 +1078,7 @@
     box.appendChild(img);
     document.body.appendChild(box);
     var tx = 0, ty = 0, cx = 0, cy = 0, raf = null, visible = false;
-    var EASE = 0.16; // menor = imagem "correndo atrás" do cursor por mais tempo
+    var EASE = 0.09; // menor = imagem "correndo atrás" do cursor por mais tempo (mais suave)
     function tick() {
       cx += (tx - cx) * EASE;
       cy += (ty - cy) * EASE;
