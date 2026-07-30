@@ -295,7 +295,8 @@
 
   /* ============ BLOG: destaque + grid de artigos ============ */
   .post-feat{ display:grid; grid-template-columns:1.1fr 1fr; background:#fff; border:1px solid var(--c-border); border-radius:22px; overflow:hidden; margin-bottom:42px; }
-  .post-feat-media{ position:relative; min-height:320px; background:var(--c-bg-soft); border-right:1px dashed var(--c-border-input); display:grid; place-items:center; color:var(--c-text-muted); font-size:13.5px; font-weight:600; }
+  .post-feat-media{ position:relative; min-height:320px; background:var(--c-bg-soft); overflow:hidden; }
+  .post-feat-media img{ position:absolute; inset:0; width:100%; height:100%; object-fit:cover; }
   .post-feat-body{ padding:44px 40px; display:flex; flex-direction:column; justify-content:center; }
   .post-feat-body h2{ font-size:28px; font-weight:800; color:var(--c-navy-900); letter-spacing:-.02em; line-height:1.18; margin-bottom:12px; }
   .post-feat-body p{ font-size:15.5px; color:var(--c-text-muted); line-height:1.6; margin-bottom:22px; }
@@ -306,7 +307,9 @@
   .posts-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:24px; }
   .post-card{ background:#fff; border:1px solid var(--c-border); border-radius:18px; overflow:hidden; display:flex; flex-direction:column; transition:transform .25s, box-shadow .25s; }
   .post-card:hover{ transform:translateY(-4px); box-shadow:0 18px 40px rgba(14,23,51,.09); }
-  .post-media{ aspect-ratio:16/10; background:var(--c-bg-soft); border-bottom:1px dashed var(--c-border-input); display:grid; place-items:center; color:var(--c-text-muted); font-size:13px; font-weight:600; }
+  .post-media{ aspect-ratio:16/10; position:relative; overflow:hidden; background:var(--c-bg-soft); }
+  .post-media img{ position:absolute; inset:0; width:100%; height:100%; object-fit:cover; transition:transform .6s cubic-bezier(.22,1,.36,1); }
+  .post-card:hover .post-media img{ transform:scale(1.05); }
   .post-body{ padding:22px; display:flex; flex-direction:column; gap:9px; flex:1; }
   .post-meta{ font-size:12px; color:var(--c-text-muted); letter-spacing:.03em; text-transform:uppercase; font-weight:600; }
   .post-body h3{ font-size:18px; font-weight:700; color:var(--c-navy-900); letter-spacing:-.01em; line-height:1.3; }
@@ -317,7 +320,7 @@
   .news-box p{ font-size:14.5px; color:var(--c-text-muted); }
   @media (max-width:1024px){
     .post-feat{ grid-template-columns:1fr; }
-    .post-feat-media{ min-height:220px; border-right:none; border-bottom:1px dashed var(--c-border-input); }
+    .post-feat-media{ min-height:220px; }
     .post-feat-body{ padding:32px 26px; }
     .posts-grid{ grid-template-columns:1fr 1fr; }
   }
@@ -410,11 +413,11 @@
     </div>
 
     <article class="post-feat">
-      <div class="post-feat-media">Imagem do artigo em destaque</div>
+      <div class="post-feat-media"><img src="assets/conteudo-imagens/blog-fiscal.jpg" alt="Documentos fiscais e calculadora sobre a mesa"></div>
       <div class="post-feat-body">
-        <span class="post-feat-tag">Normas fiscais</span>
-        <h2>Título do artigo em destaque sobre mudança normativa</h2>
-        <p>Resumo do artigo principal explicando o tema e por que ele importa para a operação.</p>
+        <span class="post-feat-tag">Normativas fiscais</span>
+        <h2>O que muda na emissão de documentos fiscais e como se preparar</h2>
+        <p>As principais mudanças na legislação de transporte e o que a sua operação precisa ajustar para seguir em conformidade.</p>
         <a class="post-more" style="margin-top:0;" href="artigo.html">Ler artigo <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
       </div>
     </article>
@@ -435,56 +438,61 @@
 
     <div class="posts-grid">
       <a class="post-card" href="artigo.html">
-        <div class="post-media">Imagem</div>
+        <div class="post-media"><img src="assets/conteudo-imagens/blog-transporte.jpg" alt="Guia operacional: organizando viagens e cargas na prática"></div>
         <div class="post-body">
-          <span class="post-meta">Categoria · Data</span>
-          <h3>Título do artigo placeholder</h3>
-          <p>Resumo curto do conteúdo.</p>
+          <span class="post-meta">Transporte e logística · 00 de mês · 2026</span>
+          <h3>Guia operacional: organizando viagens e cargas na prática</h3>
+          <p>Boas práticas para reduzir tempo ocioso e ganhar previsibilidade na operação.</p>
           <span class="post-more">Ler mais <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
         </div>
       </a>
+
       <a class="post-card" href="artigo.html">
-        <div class="post-media">Imagem</div>
+        <div class="post-media"><img src="assets/conteudo-imagens/blog-atualizacoes.jpg" alt="Novidades da plataforma: o que chegou nesta atualização"></div>
         <div class="post-body">
-          <span class="post-meta">Categoria · Data</span>
-          <h3>Título do artigo placeholder</h3>
-          <p>Resumo curto do conteúdo.</p>
+          <span class="post-meta">Atualizações do sistema · 00 de mês · 2026</span>
+          <h3>Novidades da plataforma: o que chegou nesta atualização</h3>
+          <p>Melhorias de relatórios, dashboards e automações para o dia a dia da operação.</p>
           <span class="post-more">Ler mais <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
         </div>
       </a>
+
       <a class="post-card" href="artigo.html">
-        <div class="post-media">Imagem</div>
+        <div class="post-media"><img src="assets/conteudo-imagens/blog-tecnologia.jpg" alt="Automação fiscal: menos trabalho manual, menos erro"></div>
         <div class="post-body">
-          <span class="post-meta">Categoria · Data</span>
-          <h3>Título do artigo placeholder</h3>
-          <p>Resumo curto do conteúdo.</p>
+          <span class="post-meta">Tecnologia e automação · 00 de mês · 2026</span>
+          <h3>Automação fiscal: menos trabalho manual, menos erro</h3>
+          <p>Como a automação de documentos reduz retrabalho e risco na operação.</p>
           <span class="post-more">Ler mais <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
         </div>
       </a>
+
       <a class="post-card" href="artigo.html">
-        <div class="post-media">Imagem</div>
+        <div class="post-media"><img src="assets/conteudo-imagens/blog-transporte.jpg" alt="Checklist da viagem: do carregamento à entrega sem surpresas"></div>
         <div class="post-body">
-          <span class="post-meta">Categoria · Data</span>
-          <h3>Título do artigo placeholder</h3>
-          <p>Resumo curto do conteúdo.</p>
+          <span class="post-meta">Guias operacionais · 00 de mês · 2026</span>
+          <h3>Checklist da viagem: do carregamento à entrega sem surpresas</h3>
+          <p>Um passo a passo para padronizar a operação e evitar imprevistos na estrada.</p>
           <span class="post-more">Ler mais <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
         </div>
       </a>
+
       <a class="post-card" href="artigo.html">
-        <div class="post-media">Imagem</div>
+        <div class="post-media"><img src="assets/conteudo-imagens/blog-fiscal.jpg" alt="CT-e e MDF-e: prazos e obrigações para acompanhar"></div>
         <div class="post-body">
-          <span class="post-meta">Categoria · Data</span>
-          <h3>Título do artigo placeholder</h3>
-          <p>Resumo curto do conteúdo.</p>
+          <span class="post-meta">Mudanças fiscais · 00 de mês · 2026</span>
+          <h3>CT-e e MDF-e: prazos e obrigações para acompanhar</h3>
+          <p>O calendário fiscal do transporte explicado de forma direta.</p>
           <span class="post-more">Ler mais <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
         </div>
       </a>
+
       <a class="post-card" href="artigo.html">
-        <div class="post-media">Imagem</div>
+        <div class="post-media"><img src="assets/conteudo-imagens/blog-atualizacoes.jpg" alt="Dashboards em tempo real: a operação em um só painel"></div>
         <div class="post-body">
-          <span class="post-meta">Categoria · Data</span>
-          <h3>Título do artigo placeholder</h3>
-          <p>Resumo curto do conteúdo.</p>
+          <span class="post-meta">Atualizações do sistema · 00 de mês · 2026</span>
+          <h3>Dashboards em tempo real: a operação em um só painel</h3>
+          <p>Indicadores que ajudam a decidir com dados, não com achismo.</p>
           <span class="post-more">Ler mais <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
         </div>
       </a>

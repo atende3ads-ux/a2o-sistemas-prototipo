@@ -359,7 +359,9 @@
   .posts-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:24px; }
   .post-card{ background:#fff; border:1px solid var(--c-border); border-radius:18px; overflow:hidden; display:flex; flex-direction:column; transition:transform .25s, box-shadow .25s; }
   .post-card:hover{ transform:translateY(-4px); box-shadow:0 18px 40px rgba(14,23,51,.09); }
-  .post-media{ aspect-ratio:16/10; background:var(--c-bg-soft); border-bottom:1px dashed var(--c-border-input); display:grid; place-items:center; color:var(--c-text-muted); font-size:13px; font-weight:600; }
+  .post-media{ aspect-ratio:16/10; position:relative; overflow:hidden; background:var(--c-bg-soft); }
+  .post-media img{ position:absolute; inset:0; width:100%; height:100%; object-fit:cover; transition:transform .6s cubic-bezier(.22,1,.36,1); }
+  .post-card:hover .post-media img{ transform:scale(1.05); }
   .post-body{ padding:22px; display:flex; flex-direction:column; gap:9px; flex:1; }
   .post-meta{ font-size:12px; color:var(--c-text-muted); letter-spacing:.03em; text-transform:uppercase; font-weight:600; }
   .post-body h3{ font-size:18px; font-weight:700; color:var(--c-navy-900); letter-spacing:-.01em; line-height:1.3; }
@@ -457,7 +459,7 @@
 <!-- ============ CORPO DO ARTIGO ============ -->
 <section class="section section-bg-light" style="padding-top:26px;">
   <div class="wrap-narrow">
-    <div class="article-cover">Imagem de capa do artigo (contexto / operação real)</div>
+    <div class="article-cover"><img src="../assets/conteudo-imagens/blog-fiscal.jpg" alt="Documentos fiscais e calculadora sobre a mesa"></div>
 
     <div class="prose">
       <p>Parágrafo de abertura contextualizando o tema do artigo. Aqui entra o gancho que conecta o leitor ao problema, sem rodeios, deixando claro por que o assunto importa para quem atua no setor de transporte.</p>
@@ -513,29 +515,31 @@
     </div>
     <div class="posts-grid">
       <a class="post-card" href="artigo.html">
-        <div class="post-media">Imagem</div>
+        <div class="post-media"><img src="../assets/conteudo-imagens/blog-transporte.jpg" alt="Guia operacional: organizando viagens e cargas na prática"></div>
         <div class="post-body">
-          <span class="post-meta">Categoria · Data</span>
-          <h3>Título do artigo placeholder</h3>
-          <p>Resumo curto do conteúdo.</p>
+          <span class="post-meta">Transporte e logística · 00 de mês · 2026</span>
+          <h3>Guia operacional: organizando viagens e cargas na prática</h3>
+          <p>Boas práticas para reduzir tempo ocioso e ganhar previsibilidade na operação.</p>
           <span class="post-more">Ler mais <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
         </div>
       </a>
+
       <a class="post-card" href="artigo.html">
-        <div class="post-media">Imagem</div>
+        <div class="post-media"><img src="../assets/conteudo-imagens/blog-atualizacoes.jpg" alt="Novidades da plataforma: o que chegou nesta atualização"></div>
         <div class="post-body">
-          <span class="post-meta">Categoria · Data</span>
-          <h3>Título do artigo placeholder</h3>
-          <p>Resumo curto do conteúdo.</p>
+          <span class="post-meta">Atualizações do sistema · 00 de mês · 2026</span>
+          <h3>Novidades da plataforma: o que chegou nesta atualização</h3>
+          <p>Melhorias de relatórios, dashboards e automações para o dia a dia da operação.</p>
           <span class="post-more">Ler mais <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
         </div>
       </a>
+
       <a class="post-card" href="artigo.html">
-        <div class="post-media">Imagem</div>
+        <div class="post-media"><img src="../assets/conteudo-imagens/blog-tecnologia.jpg" alt="Automação fiscal: menos trabalho manual, menos erro"></div>
         <div class="post-body">
-          <span class="post-meta">Categoria · Data</span>
-          <h3>Título do artigo placeholder</h3>
-          <p>Resumo curto do conteúdo.</p>
+          <span class="post-meta">Tecnologia e automação · 00 de mês · 2026</span>
+          <h3>Automação fiscal: menos trabalho manual, menos erro</h3>
+          <p>Como a automação de documentos reduz retrabalho e risco na operação.</p>
           <span class="post-more">Ler mais <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
         </div>
       </a>
