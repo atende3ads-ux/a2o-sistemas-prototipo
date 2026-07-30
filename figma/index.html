@@ -486,6 +486,39 @@
   .mobile-menu a{ display:block; color:rgba(255,255,255,.85); font-size:15px; font-weight:500; padding:12px 6px; border-bottom:1px solid rgba(255,255,255,.06); }
   .mobile-menu .header-cta{ width:100%; justify-content:center; margin-top:16px; border-radius:12px; }
 
+  /* ==========================================================
+     MODO ESTÁTICO — congela o site para exportação ao Figma
+     Para reativar as animações: apague este bloco inteiro
+     e troque STATIC_MODE para false no <script> do rodapé.
+     ========================================================== */
+  *, *::before, *::after{
+    animation:none !important;
+    transition:none !important;
+    scroll-behavior:auto !important;
+  }
+  /* header deixa de flutuar sobre o conteúdo: fica ancorado no topo da página */
+  .site-header{ position:absolute !important; }
+  /* desliga pin / parallax (elementos grudados na tela) */
+  .hero-v2, .problem-section, .problem-aside, .hscroll-sticky{ position:relative !important; top:auto !important; }
+  .hero-v2, .problem-section{ min-height:0 !important; }
+  .problem-section{ display:block !important; }
+  /* soluções: painéis empilhados na vertical, todos visíveis (em vez do scroll horizontal) */
+  .hscroll{ height:auto !important; }
+  .hscroll-sticky{ height:auto !important; overflow:visible !important; }
+  .hscroll-viewport{ overflow:visible !important; }
+  .hscroll-track{ flex-direction:column !important; height:auto !important; transform:none !important; }
+  .sol-panel{ width:100% !important; height:auto !important; padding:56px 32px !important; }
+  .hscroll-progress{ display:none !important; }
+  /* revela conteúdo que só aparecia no hover */
+  .case-hidden{ max-height:none !important; opacity:1 !important; transform:none !important; overflow:visible !important; }
+  .conf-feat::before{ opacity:1 !important; }
+  /* neutraliza deslocamentos de hover (o Figma não tem hover) */
+  .case-tile:hover, .case-tile:hover img, .eco-card:hover, .feat-card:hover, .benefit-card:hover,
+  .blog-card:hover, .post-card:hover, .sol-card:hover, .diff-card:hover, .mod-card:hover,
+  .chan:hover, .conf-feat:hover, .btn-cyan:hover, .btn-hero-primary:hover, .header-cta:hover,
+  .conf-cta:hover, .team-card:hover{ transform:none !important; }
+  .problem-row:hover{ padding-left:0 !important; }
+  .problem-row:hover::after{ width:0 !important; }
 </style>
 </head>
 <body>
@@ -494,7 +527,7 @@
 <header class="site-header" id="siteHeader">
   <div class="header-bar">
     <a href="index.html" class="logo">
-      <img class="logo-img" src="assets/logo-vetorizada.svg" alt="A2O Sistemas Gerenciais">
+      <img class="logo-img" src="../assets/logo-vetorizada.svg" alt="A2O Sistemas Gerenciais">
     </a>
 
     <nav>
@@ -555,7 +588,7 @@
 
 <!-- ============ HERO V2 (duas colunas: texto | caminhão) ============ -->
 <section class="hero-v2">
-  <img class="hero-v2-bg" src="assets/new-image-bg.png" alt="">
+  <img class="hero-v2-bg" src="../assets/new-image-bg.png" alt="">
   <div class="hero-v2-inner">
     <div class="hero-v2-text">
       <span class="hero-pill"><span class="dot"></span> A2O Sistemas · TMS · Frota · Agro</span>
@@ -571,13 +604,13 @@
       <p class="hero-micro">Mais de 30 anos atendendo o setor de transporte.</p>
     </div>
     <div class="hero-v2-media">
-      <img class="hero-v2-truck" src="assets/image-caminhao.png" alt="Frota de caminhões A2O Sistemas">
+      <img class="hero-v2-truck" src="../assets/image-caminhao.png" alt="Frota de caminhões A2O Sistemas">
     </div>
   </div>
 </section>
 
 <!-- Divisor: sobe junto sobrepondo o fim da hero -->
-<div class="hero-divisor"><img src="assets/divisor-hero.svg" alt=""></div>
+<div class="hero-divisor"><img src="../assets/divisor-hero.svg" alt=""></div>
 
 <!-- ============ STATS / MÉTRICAS ============ -->
 <section class="stats-section">
@@ -681,7 +714,7 @@
                 </a>
               </div>
               <div class="sol-panel-media">
-                <div class="sol-photo tms"><img src="assets/solucoes-imagens/image-tms.png" alt="Solução A2O TMS de transporte"></div>
+                <div class="sol-photo tms"><img src="../assets/solucoes-imagens/image-tms.png" alt="Solução A2O TMS de transporte"></div>
               </div>
             </div>
           </article>
@@ -699,7 +732,7 @@
                 </a>
               </div>
               <div class="sol-panel-media">
-                <div class="sol-photo frota"><img src="assets/solucoes-imagens/image-frota.png" alt="A2O frota"></div>
+                <div class="sol-photo frota"><img src="../assets/solucoes-imagens/image-frota.png" alt="A2O frota"></div>
               </div>
             </div>
           </article>
@@ -717,7 +750,7 @@
                 </a>
               </div>
               <div class="sol-panel-media">
-                <div class="sol-photo agro"><img src="assets/solucoes-imagens/image-agro.png" alt="A2O agro"></div>
+                <div class="sol-photo agro"><img src="../assets/solucoes-imagens/image-agro.png" alt="A2O agro"></div>
               </div>
             </div>
           </article>
@@ -735,7 +768,7 @@
                 </a>
               </div>
               <div class="sol-panel-media">
-                <div class="sol-photo wms"><img src="assets/solucoes-imagens/image-wms.png" alt="A2O wms"></div>
+                <div class="sol-photo wms"><img src="../assets/solucoes-imagens/image-wms.png" alt="A2O wms"></div>
               </div>
             </div>
           </article>
@@ -753,7 +786,7 @@
                 </a>
               </div>
               <div class="sol-panel-media">
-                <div class="sol-photo locacao"><img src="assets/solucoes-imagens/image-locacao.png" alt="A2O locacao"></div>
+                <div class="sol-photo locacao"><img src="../assets/solucoes-imagens/image-locacao.png" alt="A2O locacao"></div>
               </div>
             </div>
           </article>
@@ -823,7 +856,7 @@
 
     <div class="cases-tiles">
       <a class="case-tile" href="case.html">
-        <img src="assets/conteudo-imagens/case-transporte.jpg" alt="Case Transportadora Exemplo">
+        <img src="../assets/conteudo-imagens/case-transporte.jpg" alt="Case Transportadora Exemplo">
         <span class="case-tag">A2O TMS</span>
         <div class="case-content">
           <h3>Como a Transportadora Exemplo centralizou a emissão fiscal</h3>
@@ -835,7 +868,7 @@
       </a>
 
       <a class="case-tile" href="case.html">
-        <img src="assets/conteudo-imagens/case-frota.jpg" alt="Case Empresa Exemplo">
+        <img src="../assets/conteudo-imagens/case-frota.jpg" alt="Case Empresa Exemplo">
         <span class="case-tag">A2O Frota</span>
         <div class="case-content">
           <h3>Manutenção preventiva sob controle na Empresa Exemplo</h3>
@@ -847,7 +880,7 @@
       </a>
 
       <a class="case-tile" href="case.html">
-        <img src="assets/conteudo-imagens/case-agro.jpg" alt="Case Cooperativa Exemplo">
+        <img src="../assets/conteudo-imagens/case-agro.jpg" alt="Case Cooperativa Exemplo">
         <span class="case-tag">A2O Agro</span>
         <div class="case-content">
           <h3>Da balança à expedição integradas na Cooperativa Exemplo</h3>
@@ -885,7 +918,7 @@
     <!-- Grid de artigos -->
     <div class="blog-grid">
       <article class="blog-card">
-        <div class="blog-media"><img src="assets/conteudo-imagens/blog-fiscal.jpg" alt=""><span class="blog-tag">Normativas fiscais</span></div>
+        <div class="blog-media"><img src="../assets/conteudo-imagens/blog-fiscal.jpg" alt=""><span class="blog-tag">Normativas fiscais</span></div>
         <div class="blog-body">
           <span class="blog-meta">00 de mês · 2026</span>
           <h3>O que muda na emissão de documentos fiscais e como se preparar</h3>
@@ -895,7 +928,7 @@
       </article>
 
       <article class="blog-card">
-        <div class="blog-media"><img src="assets/conteudo-imagens/blog-transporte.jpg" alt=""><span class="blog-tag">Transporte e logística</span></div>
+        <div class="blog-media"><img src="../assets/conteudo-imagens/blog-transporte.jpg" alt=""><span class="blog-tag">Transporte e logística</span></div>
         <div class="blog-body">
           <span class="blog-meta">00 de mês · 2026</span>
           <h3>Guia operacional: organizando viagens e cargas na prática</h3>
@@ -905,7 +938,7 @@
       </article>
 
       <article class="blog-card">
-        <div class="blog-media"><img src="assets/conteudo-imagens/blog-atualizacoes.jpg" alt=""><span class="blog-tag">Atualizações do sistema</span></div>
+        <div class="blog-media"><img src="../assets/conteudo-imagens/blog-atualizacoes.jpg" alt=""><span class="blog-tag">Atualizações do sistema</span></div>
         <div class="blog-body">
           <span class="blog-meta">00 de mês · 2026</span>
           <h3>Novidades da plataforma: o que chegou nesta atualização</h3>
@@ -915,7 +948,7 @@
       </article>
 
       <article class="blog-card">
-        <div class="blog-media"><img src="assets/conteudo-imagens/blog-tecnologia.jpg" alt=""><span class="blog-tag">Tecnologia e automação</span></div>
+        <div class="blog-media"><img src="../assets/conteudo-imagens/blog-tecnologia.jpg" alt=""><span class="blog-tag">Tecnologia e automação</span></div>
         <div class="blog-body">
           <span class="blog-meta">00 de mês · 2026</span>
           <h3>Automação fiscal: menos trabalho manual, menos erro</h3>
@@ -951,7 +984,7 @@
   <div class="footer-inner">
     <div class="footer-top">
       <div class="footer-brand">
-        <a href="index.html" class="logo"><img class="logo-img" src="assets/logo-branca.svg" alt="A2O Sistemas Gerenciais"></a>
+        <a href="index.html" class="logo"><img class="logo-img" src="../assets/logo-branca.svg" alt="A2O Sistemas Gerenciais"></a>
         <p class="footer-tag">Gestão logística integrada: transporte, frota e agro em uma só plataforma.</p>
       </div>
       <div class="footer-col">
@@ -1003,6 +1036,10 @@
 </footer>
 
 <script>
+  // MODO ESTÁTICO: efeitos de scroll desligados para exportação ao Figma.
+  // Troque para false (e apague o bloco "MODO ESTÁTICO" do CSS) para reativar.
+  var STATIC_MODE = true;
+  if (!STATIC_MODE) {
   // Header: vira barra flutuante de vidro ao rolar
   (function () {
     var header = document.getElementById('siteHeader');
@@ -1063,6 +1100,7 @@
     computeTarget();
     curP = targetP; tick();
   })();
+  }
 </script>
 
 </body>
