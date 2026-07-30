@@ -294,9 +294,12 @@
   .mobile-menu .header-cta{ width:100%; justify-content:center; margin-top:16px; border-radius:12px; }
 
   /* ============ CASES: destaque + depoimentos ============ */
-  .logos-strip{ display:grid; grid-template-columns:repeat(6,1fr); gap:18px; }
-  .logo-ph2{ height:72px; background:#fff; border:1px solid var(--c-border); border-radius:12px; display:grid; place-items:center; padding:14px 18px; }
-  .logo-ph2 img{ max-width:100%; max-height:40px; width:auto; height:auto; object-fit:contain; }
+  .logos-marquee{ position:relative; overflow:hidden; -webkit-mask-image:linear-gradient(90deg,transparent 0,#000 6%,#000 94%,transparent 100%); mask-image:linear-gradient(90deg,transparent 0,#000 6%,#000 94%,transparent 100%); }
+  .logos-track{ display:flex; width:max-content; animation:logos-scroll 42s linear infinite; }
+  @keyframes logos-scroll{ from{ transform:translateX(0); } to{ transform:translateX(-50%); } }
+  @media (prefers-reduced-motion: reduce){ .logos-track{ animation:none; } }
+  .logo-ph{ flex:0 0 200px; margin-right:18px; height:72px; background:#fff; border:1px solid var(--c-border); border-radius:12px; display:grid; place-items:center; padding:14px 20px; }
+  .logo-ph img{ max-width:100%; max-height:40px; width:auto; height:auto; object-fit:contain; }
   .case-feat{ display:grid; grid-template-columns:1fr 1fr; gap:0; background:#fff; border:1px solid var(--c-border); border-radius:22px; overflow:hidden; margin-bottom:24px; }
   .case-feat-media{ position:relative; min-height:340px; background:var(--c-bg-soft); border-right:1px dashed var(--c-border-input); display:grid; place-items:center; color:var(--c-text-muted); font-size:13.5px; font-weight:600; text-align:center; padding:20px; }
   .case-feat-body{ padding:40px 38px; display:flex; flex-direction:column; justify-content:center; }
@@ -316,13 +319,12 @@
   .depo-author h4{ font-size:14.5px; font-weight:700; color:var(--c-navy-900); }
   .depo-author p{ font-size:12.5px; color:var(--c-text-muted); }
   @media (max-width:1024px){
-    .logos-strip{ grid-template-columns:repeat(3,1fr); }
     .case-feat{ grid-template-columns:1fr; }
     .case-feat-media{ min-height:220px; border-right:none; border-bottom:1px dashed var(--c-border-input); }
     .case-feat-body{ padding:30px 26px; }
     .depo-grid{ grid-template-columns:1fr 1fr; }
   }
-  @media (max-width:640px){ .logos-strip{ grid-template-columns:1fr 1fr; } .depo-grid{ grid-template-columns:1fr; } .case-metrics{ grid-template-columns:1fr; gap:14px; } }
+  @media (max-width:640px){ .depo-grid{ grid-template-columns:1fr; } .case-metrics{ grid-template-columns:1fr; gap:14px; } }
 
 </style>
 </head>
@@ -412,14 +414,22 @@
       <span class="eyebrow">Segmentos atendidos</span>
       <h2 class="section-title">Empresas de <span class="accent">diversos segmentos</span></h2>
     </div>
-    <div class="logos-strip">
-      <div class="logo-ph2"><img src="assets/logo-clientes/logo-01.png" alt="Cesar"></div>
-      <div class="logo-ph2"><img src="assets/logo-clientes/logo-02.png" alt="Transzilli Expresso e Logística"></div>
-      <div class="logo-ph2"><img src="assets/logo-clientes/logo-03.png" alt="TransBono"></div>
-      <div class="logo-ph2"><img src="assets/logo-clientes/logo-04.png" alt="Grupo RG Transportes"></div>
-      <div class="logo-ph2"><img src="assets/logo-clientes/logo-05.png" alt="Dalastra Logística"></div>
-      <div class="logo-ph2"><img src="assets/logo-clientes/logo-06.png" alt="Fokus"></div>
+    <div class="logos-marquee">
+    <div class="logos-track">
+      <div class="logo-ph"><img src="assets/logo-clientes/logo-01.png" alt="Cesar"></div>
+      <div class="logo-ph"><img src="assets/logo-clientes/logo-02.png" alt="Transzilli Expresso e Logística"></div>
+      <div class="logo-ph"><img src="assets/logo-clientes/logo-03.png" alt="TransBono"></div>
+      <div class="logo-ph"><img src="assets/logo-clientes/logo-04.png" alt="Grupo RG Transportes"></div>
+      <div class="logo-ph"><img src="assets/logo-clientes/logo-05.png" alt="Dalastra Logística"></div>
+      <div class="logo-ph"><img src="assets/logo-clientes/logo-06.png" alt="Fokus"></div>
+      <div class="logo-ph" aria-hidden="true"><img src="assets/logo-clientes/logo-01.png" alt=""></div>
+      <div class="logo-ph" aria-hidden="true"><img src="assets/logo-clientes/logo-02.png" alt=""></div>
+      <div class="logo-ph" aria-hidden="true"><img src="assets/logo-clientes/logo-03.png" alt=""></div>
+      <div class="logo-ph" aria-hidden="true"><img src="assets/logo-clientes/logo-04.png" alt=""></div>
+      <div class="logo-ph" aria-hidden="true"><img src="assets/logo-clientes/logo-05.png" alt=""></div>
+      <div class="logo-ph" aria-hidden="true"><img src="assets/logo-clientes/logo-06.png" alt=""></div>
     </div>
+  </div>
   </div>
 </section>
 

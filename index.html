@@ -196,8 +196,7 @@
   @keyframes logos-scroll{ from{ transform:translateX(0); } to{ transform:translateX(-50%); } }
   @media (prefers-reduced-motion: reduce){ .logos-track{ animation:none; } }
   .logo-ph{ flex:0 0 200px; margin-right:18px; height:66px; background:#fff; border:1px solid var(--c-border); border-radius:12px; display:grid; place-items:center; color:var(--c-text-muted); font-size:12px; }
-  .logo-ph img{ max-width:150px; max-height:38px; width:auto; height:auto; object-fit:contain; opacity:.85; transition:opacity .2s; }
-  .logo-ph:hover img{ opacity:1; }
+  .logo-ph img{ max-width:150px; max-height:38px; width:auto; height:auto; object-fit:contain; }
 
   /* ============ PROBLEM (editorial + parallax/pin) ============ */
   .problem-section{ background:var(--c-bg); position:sticky; top:0; z-index:1; overflow:hidden; min-height:100vh; display:grid; place-items:center; }
@@ -845,7 +844,7 @@
 
     <!-- Grid de artigos -->
     <div class="blog-grid">
-      <article class="blog-card">
+      <a class="blog-card" href="artigo.html">
         <div class="blog-media"><img src="assets/conteudo-imagens/blog-fiscal.jpg" alt=""><span class="blog-tag">Normativas fiscais</span></div>
         <div class="blog-body">
           <span class="blog-meta">00 de mês · 2026</span>
@@ -853,9 +852,9 @@
           <p>As principais mudanças na legislação de transporte e o que ajustar para seguir em conformidade.</p>
           <span class="blog-more">Ler mais →</span>
         </div>
-      </article>
+      </a>
 
-      <article class="blog-card">
+      <a class="blog-card" href="artigo.html">
         <div class="blog-media"><img src="assets/conteudo-imagens/blog-transporte.jpg" alt=""><span class="blog-tag">Transporte e logística</span></div>
         <div class="blog-body">
           <span class="blog-meta">00 de mês · 2026</span>
@@ -863,9 +862,9 @@
           <p>Boas práticas para reduzir tempo ocioso e ganhar previsibilidade na operação.</p>
           <span class="blog-more">Ler mais →</span>
         </div>
-      </article>
+      </a>
 
-      <article class="blog-card">
+      <a class="blog-card" href="artigo.html">
         <div class="blog-media"><img src="assets/conteudo-imagens/blog-atualizacoes.jpg" alt=""><span class="blog-tag">Atualizações do sistema</span></div>
         <div class="blog-body">
           <span class="blog-meta">00 de mês · 2026</span>
@@ -873,9 +872,9 @@
           <p>Melhorias de relatórios, dashboards e automações para o dia a dia da operação.</p>
           <span class="blog-more">Ler mais →</span>
         </div>
-      </article>
+      </a>
 
-      <article class="blog-card">
+      <a class="blog-card" href="artigo.html">
         <div class="blog-media"><img src="assets/conteudo-imagens/blog-tecnologia.jpg" alt=""><span class="blog-tag">Tecnologia e automação</span></div>
         <div class="blog-body">
           <span class="blog-meta">00 de mês · 2026</span>
@@ -883,7 +882,7 @@
           <p>Como a automação de documentos reduz retrabalho e risco na operação.</p>
           <span class="blog-more">Ler mais →</span>
         </div>
-      </article>
+      </a>
     </div>
 
     <div class="blog-cta">
