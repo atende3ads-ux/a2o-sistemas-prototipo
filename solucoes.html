@@ -334,6 +334,11 @@
     .eco-card, .eco-card:nth-child(4), .eco-card:nth-child(5){ grid-column:auto; }
   }
 
+
+  /* tag "Ver solução" que acompanha o cursor sobre os cards do ecossistema */
+  .cursor-tag{ position:fixed; left:0; top:0; width:132px; height:auto; pointer-events:none; z-index:90; opacity:0; transform:translate(20px,20px) scale(.85); transition:opacity .22s ease, transform .28s cubic-bezier(.22,1,.36,1); filter:drop-shadow(0 14px 28px rgba(14,23,51,.35)); }
+  .cursor-tag.on{ opacity:1; transform:translate(20px,20px) scale(1); }
+  @media (hover:none){ .cursor-tag{ display:none; } }
 </style>
 </head>
 <body>
@@ -630,6 +635,45 @@
     }
     window.addEventListener('scroll', onScroll, { passive: true });
     onScroll();
+  })();
+
+  // Tag "Ver solução" acompanha o cursor sobre os cards do ecossistema
+  (function () {
+    if (window.matchMedia('(hover: none)').matches) return;
+    var nodes = [].slice.call(document.querySelectorAll('.eco-card'));
+    if (!nodes.length) return;
+    var box = document.createElement('img');
+    box.className = 'cursor-tag';
+    box.src = 'assets/tag-mouse-solucao.svg';
+    box.alt = '';
+    box.setAttribute('aria-hidden', 'true');
+    document.body.appendChild(box);
+    var tx = 0, ty = 0, cx = 0, cy = 0, raf = null, visible = false;
+    var EASE = 0.09; // menor = mais atraso/suavidade na perseguição
+    function tick() {
+      cx += (tx - cx) * EASE;
+      cy += (ty - cy) * EASE;
+      box.style.left = cx.toFixed(1) + 'px';
+      box.style.top = cy.toFixed(1) + 'px';
+      raf = (visible || Math.abs(tx - cx) + Math.abs(ty - cy) > 0.4) ? requestAnimationFrame(tick) : null;
+    }
+    nodes.forEach(function (el) {
+      el.addEventListener('mouseenter', function (e) {
+        tx = cx = e.clientX; ty = cy = e.clientY; // nasce sob o cursor
+        box.style.left = cx + 'px'; box.style.top = cy + 'px';
+        visible = true;
+        box.classList.add('on');
+        if (!raf) raf = requestAnimationFrame(tick);
+      });
+      el.addEventListener('mousemove', function (e) {
+        tx = e.clientX; ty = e.clientY;
+        if (!raf) raf = requestAnimationFrame(tick);
+      });
+      el.addEventListener('mouseleave', function () {
+        visible = false;
+        box.classList.remove('on');
+      });
+    });
   })();
 </script>
 
