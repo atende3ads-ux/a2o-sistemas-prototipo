@@ -303,7 +303,8 @@
   .mod-card p{ font-size:14px; color:var(--c-text-muted); line-height:1.55; }
   .routine-grid{ display:grid; grid-template-columns:repeat(4,1fr); gap:20px; }
   .routine-card{ border-radius:18px; overflow:hidden; border:1px solid var(--c-border); background:#fff; }
-  .routine-media{ aspect-ratio:4/3; background:var(--c-bg-soft); border-bottom:1px dashed var(--c-border-input); display:grid; place-items:center; color:var(--c-text-muted); font-size:12.5px; font-weight:600; text-align:center; padding:14px; }
+  .routine-media{ position:relative; aspect-ratio:4/3; background:var(--c-bg-soft); overflow:hidden; }
+  .routine-media img{ position:absolute; inset:0; width:100%; height:100%; object-fit:cover; }
   .routine-card h4{ font-size:15.5px; font-weight:700; color:var(--c-navy-900); padding:18px 20px 18px; }
   @media (max-width:1024px){ .mod-grid{ grid-template-columns:1fr 1fr; } .routine-grid{ grid-template-columns:1fr 1fr; } }
   @media (max-width:640px){ .mod-grid, .routine-grid{ grid-template-columns:1fr; } }
@@ -452,19 +453,19 @@
     </div>
     <div class="routine-grid">
       <div class="routine-card">
-        <div class="routine-media">Imagem: emissão e documentação fiscal</div>
+        <div class="routine-media"><img src="assets/conteudo-imagens/blog-fiscal.jpg" alt="Documentos fiscais e calculadora sobre a mesa"></div>
         <h4>Emissão e documentação fiscal</h4>
       </div>
       <div class="routine-card">
-        <div class="routine-media">Imagem: viagem / pátio de operação</div>
+        <div class="routine-media"><img src="assets/conteudo-imagens/case-transporte.jpg" alt="Caminhão em viagem na estrada"></div>
         <h4>Viagem / pátio de operação</h4>
       </div>
       <div class="routine-card">
-        <div class="routine-media">Imagem: gestão da frota no dia a dia</div>
+        <div class="routine-media"><img src="assets/conteudo-imagens/case-frota.jpg" alt="Frota de caminhões no pátio"></div>
         <h4>Gestão da frota no dia a dia</h4>
       </div>
       <div class="routine-card">
-        <div class="routine-media">Imagem: equipe administrativa / financeiro</div>
+        <div class="routine-media"><img src="assets/conteudo-imagens/blog-atualizacoes.jpg" alt="Equipe acompanhando indicadores no computador"></div>
         <h4>Equipe administrativa / financeiro</h4>
       </div>
     </div>
