@@ -365,6 +365,9 @@
   .team-body span{ display:block; font-size:13px; color:var(--c-blue); font-weight:600; margin-top:2px; }
   .team-body p{ font-size:13.5px; color:var(--c-text-muted); line-height:1.55; margin-top:8px; }
   /* tecnologia e inovação (seção escura): grid + checklist */
+  /* tecnologia: card escuro com margens laterais e cantos arredondados */
+  .tech-section{ padding:50px 32px; background:var(--c-bg); }
+  .tech-card{ max-width:var(--maxw); margin:0 auto; border-radius:46px; padding:clamp(60px,7vw,100px) clamp(28px,5vw,84px); }
   .tech-grid{ display:grid; grid-template-columns:1.05fr 1fr; gap:60px; align-items:center; }
   .tech-list{ list-style:none; display:flex; flex-direction:column; gap:14px; }
   .tech-list li{ display:flex; align-items:center; gap:14px; padding:16px 20px; background:rgba(255,255,255,.05); border:1px solid rgba(255,255,255,.1); border-radius:12px; color:rgba(255,255,255,.9); font-size:15px; font-weight:500; }
@@ -590,8 +593,8 @@
 </section>
 
 <!-- ============ TECNOLOGIA E INOVAÇÃO ============ -->
-<section class="section section-bg-dark" id="tecnologia">
-  <div class="section-inner">
+<section class="tech-section" id="tecnologia">
+  <div class="tech-card section-bg-dark">
     <div class="tech-grid">
       <div>
         <span class="eyebrow">Tecnologia e inovação</span>
