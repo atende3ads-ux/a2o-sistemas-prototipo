@@ -167,8 +167,8 @@
   /* ============ HERO BANNER (arte com cantos e corte embutidos) ============ */
   .sol-hero{ padding:112px 32px 0; background:var(--c-bg); }
   .sol-hero-banner{ position:relative; max-width:var(--maxw); margin:0 auto; }
-  .sol-hero-banner img{ display:block; width:100%; height:auto; }
-  .sol-hero-shade{ position:absolute; inset:0; z-index:1; pointer-events:none; background:linear-gradient(100deg, rgba(8,14,38,.78) 0%, rgba(8,14,38,.48) 34%, rgba(8,14,38,.08) 62%, transparent 76%); -webkit-mask-image:url('../assets/hero-locacao-desktop.png'); mask-image:url('../assets/hero-locacao-desktop.png'); -webkit-mask-size:100% 100%; mask-size:100% 100%; }
+  .sol-hero-banner img{ display:block; width:100%; height:auto; border-radius:36px; }
+  .sol-hero-shade{ position:absolute; inset:0; z-index:1; pointer-events:none; background:linear-gradient(100deg, rgba(8,14,38,.78) 0%, rgba(8,14,38,.48) 34%, rgba(8,14,38,.08) 62%, transparent 76%); -webkit-mask-image:url('../assets/hero-locacao-desktop.png'); mask-image:url('../assets/hero-locacao-desktop.png'); -webkit-mask-size:100% 100%; mask-size:100% 100%; border-radius:36px; }
   .sol-hero-content{ position:absolute; left:clamp(24px,4vw,60px); bottom:clamp(24px,4vw,52px); z-index:2; max-width:620px; color:#fff; }
   .sol-hero-content .eyebrow{ color:#fff; background:rgba(255,255,255,.10); border-color:rgba(255,255,255,.28); }
   .sol-hero-content .eyebrow::before{ background:var(--c-cyan); }
@@ -186,8 +186,8 @@
   }
   @media (max-width:640px){
     .sol-hero{ padding:88px 20px 0; }
-    .sol-hero-banner img{ min-height:0; object-fit:fill; border-radius:0; }
-    .sol-hero-shade{ -webkit-mask-image:url('../assets/hero-locacao-mobile.png'); mask-image:url('../assets/hero-locacao-mobile.png'); -webkit-mask-size:100% 100%; mask-size:100% 100%; border-radius:0; background:linear-gradient(to top, rgba(8,14,38,.88) 0%, rgba(8,14,38,.5) 46%, rgba(8,14,38,.06) 72%, transparent 86%); }
+    .sol-hero-banner img{ min-height:0; object-fit:fill; border-radius:26px; }
+    .sol-hero-shade{ -webkit-mask-image:url('../assets/hero-locacao-mobile.png'); mask-image:url('../assets/hero-locacao-mobile.png'); -webkit-mask-size:100% 100%; mask-size:100% 100%; border-radius:26px; background:linear-gradient(to top, rgba(8,14,38,.88) 0%, rgba(8,14,38,.5) 46%, rgba(8,14,38,.06) 72%, transparent 86%); }
     .sol-hero-actions{ flex-direction:column; align-items:stretch; }
   }
 
