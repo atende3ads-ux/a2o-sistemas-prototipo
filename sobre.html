@@ -218,8 +218,7 @@
 
   /* ============ FUNCIONALIDADES (feature grid) ============ */
   .feat-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:22px; }
-  .feat-card{ background:#fff; border:1px solid var(--c-border); border-radius:18px; padding:28px 26px; transition:transform .25s, box-shadow .25s, border-color .25s; }
-  .feat-card:hover{ transform:translateY(-4px); box-shadow:0 20px 44px rgba(14,23,51,.10); border-color:var(--c-cyan); }
+  .feat-card{ background:#fff; border:1px solid var(--c-border); border-radius:18px; padding:28px 26px; }
   .feat-ico{ width:48px; height:48px; border-radius:13px; background:var(--grad-brand); display:grid; place-items:center; color:#fff; margin-bottom:18px; box-shadow:0 8px 18px rgba(29,63,163,.22); }
   .feat-ico svg{ width:23px; height:23px; }
   .feat-card h3{ font-size:17.5px; font-weight:700; color:var(--c-navy-900); margin-bottom:8px; letter-spacing:-.01em; }
@@ -247,7 +246,7 @@
   .integ-visual img{ width:100%; height:100%; object-fit:cover; display:block; }
 
   /* ============ FAQ (accordion) ============ */
-  .faq-list{ display:flex; flex-direction:column; gap:12px; max-width:840px; }
+  .faq-list{ display:flex; flex-direction:column; gap:12px; max-width:840px; margin:0 auto; }
   .faq-item{ border:1px solid var(--c-border); border-radius:14px; background:#fff; overflow:hidden; }
   .faq-item summary{ display:flex; align-items:center; justify-content:space-between; gap:16px; padding:20px 24px; font-size:15.5px; font-weight:700; color:var(--c-navy-900); cursor:pointer; list-style:none; }
   .faq-item summary::-webkit-details-marker{ display:none; }
@@ -333,8 +332,7 @@
   /* timeline em zigue-zague com linha central */
   .timeline{ position:relative; max-width:1060px; margin:0 auto; padding:8px 0 2px; }
   .timeline::before{ content:''; position:absolute; left:50%; top:0; bottom:0; width:2px; transform:translateX(-50%); background:linear-gradient(180deg, rgba(29,63,163,0) 0%, rgba(29,63,163,.35) 7%, rgba(40,199,247,.35) 93%, rgba(40,199,247,0) 100%); }
-  .tl-item{ position:relative; width:calc(50% - 44px); background:#fff; border:1px solid var(--c-border); border-radius:18px; padding:26px 28px; margin-bottom:26px; transition:transform .25s, box-shadow .25s, border-color .25s; }
-  .tl-item:hover{ transform:translateY(-3px); box-shadow:0 18px 40px rgba(14,23,51,.10); border-color:var(--c-cyan); }
+  .tl-item{ position:relative; width:calc(50% - 44px); background:#fff; border:1px solid var(--c-border); border-radius:18px; padding:26px 28px; margin-bottom:26px; }
   .tl-item:nth-child(odd){ margin-right:auto; }
   .tl-item:nth-child(even){ margin-left:auto; }
   .tl-item::before{ content:''; position:absolute; top:30px; width:16px; height:16px; border-radius:50%; background:#fff; border:3px solid var(--c-blue); box-shadow:0 0 0 5px rgba(29,63,163,.12); z-index:1; }
@@ -352,9 +350,8 @@
   .tl-item.is-now::before{ background:var(--grad-brand); border-color:#fff; box-shadow:0 0 0 6px rgba(40,199,247,.22); }
   .tl-pending{ display:inline-flex; align-items:center; gap:8px; font-size:12.5px; font-weight:700; letter-spacing:.04em; text-transform:uppercase; color:var(--c-text-muted); background:var(--c-bg-soft); border:1px dashed var(--c-border-input); border-radius:999px; padding:8px 16px; }
   .diff-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:22px; }
-  .diff-card{ background:#fff; border:1px solid var(--c-border); border-radius:18px; padding:32px 28px; position:relative; overflow:hidden; transition:transform .25s, box-shadow .25s, border-color .25s; }
+  .diff-card{ background:#fff; border:1px solid var(--c-border); border-radius:18px; padding:32px 28px; position:relative; overflow:hidden; }
   .diff-card::before{ content:''; position:absolute; top:0; left:0; right:0; height:3px; background:var(--grad-brand); }
-  .diff-card:hover{ transform:translateY(-4px); box-shadow:0 20px 44px rgba(14,23,51,.10); border-color:var(--c-cyan); }
   .diff-ico{ width:54px; height:54px; border-radius:15px; background:var(--grad-brand); display:grid; place-items:center; color:#fff; box-shadow:0 10px 24px rgba(29,63,163,.25); margin-bottom:20px; position:relative; z-index:1; }
   .diff-ico svg{ width:26px; height:26px; }
   .diff-card h3{ font-size:19px; font-weight:700; color:var(--c-navy-900); margin-bottom:9px; letter-spacing:-.015em; }
@@ -675,7 +672,7 @@
     </div>
     <div class="footer-bottom">
       <div>© 2026 A2O Sistemas. Todos os direitos reservados.</div>
-      <div class="fb-center"><a href="#">Política de Privacidade</a> · <a href="#">Termos de Uso</a></div>
+      <div class="fb-center"><a href="politica-de-privacidade.html">Política de Privacidade</a> · <a href="termos-de-uso.html">Termos de Uso</a></div>
       <div class="fb-right"><a href="https://3ads.com.br/" target="_blank" rel="noopener">Desenvolvido por 3ADS.</a></div>
     </div>
   </div>
