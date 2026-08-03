@@ -159,7 +159,7 @@
   /* ============ HERO BANNER (imagem com cantos e corte embutidos na arte) ============ */
   .sol-hero{ padding:112px 32px 0; background:var(--c-bg); }
   .sol-hero-banner{ position:relative; max-width:var(--maxw); margin:0 auto; }
-  .sol-hero-banner > img{ display:block; width:100%; height:auto; }
+  .sol-hero-banner img{ display:block; width:100%; height:auto; }
   /* véu escuro à esquerda p/ legibilidade, mascarado pela própria arte (respeita cantos e corte) */
   .sol-hero-shade{ position:absolute; inset:0; z-index:1; pointer-events:none; background:linear-gradient(100deg, rgba(8,14,38,.82) 0%, rgba(8,14,38,.55) 34%, rgba(8,14,38,.10) 62%, transparent 76%); -webkit-mask-image:url('../assets/solucoes-imagens/image-hero-banner-solucoes.png'); mask-image:url('../assets/solucoes-imagens/image-hero-banner-solucoes.png'); -webkit-mask-size:100% 100%; mask-size:100% 100%; }
   .sol-hero-content{ position:absolute; left:clamp(24px,4vw,60px); bottom:clamp(24px,4vw,56px); z-index:2; max-width:560px; color:#fff; }
@@ -170,12 +170,13 @@
   .sol-hero-content p{ font-size:14.5px; line-height:1.55; color:rgba(255,255,255,.85); max-width:46ch; }
   @media (max-width:1024px){
     .sol-hero{ padding-top:96px; }
-    .sol-hero-banner > img{ min-height:420px; object-fit:cover; border-radius:26px; }
+    .sol-hero-banner img{ min-height:420px; object-fit:cover; border-radius:26px; }
     .sol-hero-shade{ -webkit-mask-image:none; mask-image:none; border-radius:26px; }
   }
   @media (max-width:640px){
     .sol-hero{ padding:88px 20px 0; }
-    .sol-hero-banner > img{ min-height:480px; }
+    .sol-hero-banner img{ min-height:0; object-fit:fill; border-radius:0; }
+    .sol-hero-shade{ -webkit-mask-image:url('../assets/solucoes-imagens/image-hero-banner-solucoes-mobile.png'); mask-image:url('../assets/solucoes-imagens/image-hero-banner-solucoes-mobile.png'); -webkit-mask-size:100% 100%; mask-size:100% 100%; border-radius:0; background:linear-gradient(to top, rgba(8,14,38,.86) 0%, rgba(8,14,38,.45) 42%, rgba(8,14,38,.05) 70%, transparent 84%); }
   }
 
   /* ============ PAGE HERO (páginas internas de solução) ============ */
@@ -459,7 +460,10 @@
 <!-- ============ HERO BANNER ============ -->
 <section class="sol-hero">
   <div class="sol-hero-banner">
-    <img src="../assets/solucoes-imagens/image-hero-banner-solucoes.png" alt="Gestor com tablet em frente à frota">
+    <picture>
+      <source media="(max-width:640px)" srcset="../assets/solucoes-imagens/image-hero-banner-solucoes-mobile.png">
+      <img src="../assets/solucoes-imagens/image-hero-banner-solucoes.png" alt="Gestor com tablet em frente à frota">
+    </picture>
     <div class="sol-hero-shade" aria-hidden="true"></div>
     <div class="sol-hero-content">
       <span class="eyebrow">Soluções</span>

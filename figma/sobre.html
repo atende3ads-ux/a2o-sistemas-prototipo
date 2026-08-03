@@ -159,7 +159,7 @@
   /* ============ HERO BANNER (arte com cantos embutidos, mesmo padrão de Soluções) ============ */
   .sol-hero{ padding:112px 32px 0; background:var(--c-bg); }
   .sol-hero-banner{ position:relative; max-width:var(--maxw); margin:0 auto; }
-  .sol-hero-banner > img{ display:block; width:100%; height:auto; }
+  .sol-hero-banner img{ display:block; width:100%; height:auto; }
   .sol-hero-shade{ position:absolute; inset:0; z-index:1; pointer-events:none; background:linear-gradient(100deg, rgba(8,14,38,.72) 0%, rgba(8,14,38,.42) 34%, rgba(8,14,38,.06) 60%, transparent 74%); -webkit-mask-image:url('../assets/image-banner-sobre.png'); mask-image:url('../assets/image-banner-sobre.png'); -webkit-mask-size:100% 100%; mask-size:100% 100%; }
   .sol-hero-content{ position:absolute; left:clamp(24px,4vw,60px); bottom:clamp(24px,4vw,56px); z-index:2; max-width:600px; color:#fff; }
   .sol-hero-content .eyebrow{ color:#fff; background:rgba(255,255,255,.10); border-color:rgba(255,255,255,.28); }
@@ -169,12 +169,13 @@
   .sol-hero-content p{ font-size:14.5px; line-height:1.55; color:rgba(255,255,255,.85); max-width:52ch; }
   @media (max-width:1024px){
     .sol-hero{ padding-top:96px; }
-    .sol-hero-banner > img{ min-height:420px; object-fit:cover; border-radius:26px; }
+    .sol-hero-banner img{ min-height:420px; object-fit:cover; border-radius:26px; }
     .sol-hero-shade{ -webkit-mask-image:none; mask-image:none; border-radius:26px; }
   }
   @media (max-width:640px){
     .sol-hero{ padding:88px 20px 0; }
-    .sol-hero-banner > img{ min-height:480px; }
+    .sol-hero-banner img{ min-height:0; object-fit:fill; border-radius:0; }
+    .sol-hero-shade{ -webkit-mask-image:url('../assets/solucoes-imagens/image-banner-sobre-mobile.png'); mask-image:url('../assets/solucoes-imagens/image-banner-sobre-mobile.png'); -webkit-mask-size:100% 100%; mask-size:100% 100%; border-radius:0; background:linear-gradient(to top, rgba(8,14,38,.86) 0%, rgba(8,14,38,.45) 42%, rgba(8,14,38,.05) 70%, transparent 84%); }
   }
 
   /* ============ PAGE HERO (páginas internas de solução) ============ */
@@ -317,14 +318,14 @@
   /* ============ SOBRE: timeline / diferenciais / equipe ============ */
   /* hero do sobre: visual à direita com chips flutuantes */
   /* faixa de métricas (mesma da home) */
-  .stats-section{ background:#1D3FA3; padding:56px 32px 60px; }
+  .stats-section{ background:var(--c-bg-soft); padding:56px 32px 60px; }
   .stats-inner{ max-width:var(--maxw); margin:0 auto; }
-  .stats-strip{ display:grid; grid-template-columns:repeat(4,1fr); color:#fff; }
+  .stats-strip{ display:grid; grid-template-columns:repeat(4,1fr); color:var(--c-blue); }
   .stat-item{ position:relative; padding:0 28px; }
-  .stat-item + .stat-item{ border-left:1px solid rgba(255,255,255,.18); }
-  .stat-num{ font-size:clamp(40px,4.4vw,58px); font-weight:800; letter-spacing:-.045em; line-height:1; background:linear-gradient(135deg,#FFFFFF 0%,#8BE8FF 100%); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; margin-bottom:10px; }
+  .stat-item + .stat-item{ border-left:1px solid rgba(29,63,163,.18); }
+  .stat-num{ font-size:clamp(40px,4.4vw,58px); font-weight:800; letter-spacing:-.045em; line-height:1; background:var(--grad-brand); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; margin-bottom:10px; }
   .stat-unit{ font-size:.42em; font-weight:700; margin-left:.12em; letter-spacing:0; }
-  .stat-label{ font-size:14px; color:rgba(255,255,255,.82); line-height:1.5; letter-spacing:-.005em; }
+  .stat-label{ font-size:14px; color:var(--c-blue); line-height:1.5; letter-spacing:-.005em; }
   /* timeline em zigue-zague com linha central */
   .timeline{ position:relative; max-width:1060px; margin:0 auto; padding:8px 0 2px; }
   .timeline::before{ content:''; position:absolute; left:50%; top:0; bottom:0; width:2px; transform:translateX(-50%); background:linear-gradient(180deg, rgba(29,63,163,0) 0%, rgba(29,63,163,.35) 7%, rgba(40,199,247,.35) 93%, rgba(40,199,247,0) 100%); }
@@ -386,7 +387,7 @@
     .team-grid{ grid-template-columns:1fr; }
     .stats-strip{ grid-template-columns:1fr; gap:26px; text-align:center; padding:0; }
     .stat-item{ padding:0; }
-    .stat-item + .stat-item{ border-left:none; border-top:1px solid rgba(255,255,255,.12); padding-top:26px; }
+    .stat-item + .stat-item{ border-left:none; border-top:1px solid rgba(29,63,163,.14); padding-top:26px; }
   }
 
   /* ==========================================================
@@ -492,7 +493,10 @@
 <!-- ============ HERO BANNER ============ -->
 <section class="sol-hero">
   <div class="sol-hero-banner">
-    <img src="../assets/image-banner-sobre.png" alt="Colaborador da A2O no escritório">
+    <picture>
+      <source media="(max-width:640px)" srcset="../assets/solucoes-imagens/image-banner-sobre-mobile.png">
+      <img src="../assets/image-banner-sobre.png" alt="Colaborador da A2O no escritório">
+    </picture>
     <div class="sol-hero-shade" aria-hidden="true"></div>
     <div class="sol-hero-content">
       <span class="eyebrow">Sobre a A2O · História</span>
