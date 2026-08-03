@@ -238,10 +238,10 @@
   .seg-chips{ display:flex; flex-wrap:wrap; gap:10px; }
   .seg-chip{ font-size:14px; font-weight:600; color:var(--c-text-strong); background:#fff; border:1px solid var(--c-border); border-radius:999px; padding:9px 18px; }
 
-  /* ============ INTEGRAÇÕES (split claro) ============ */
-  .integ-grid{ display:grid; grid-template-columns:1.1fr 1fr; gap:60px; align-items:center; }
-  .integ-visual{ background:#fff; border:1px solid var(--c-border); border-radius:20px; aspect-ratio:4/3; overflow:hidden; box-shadow:var(--shadow-card); }
-  .integ-visual img{ width:100%; height:100%; object-fit:cover; display:block; }
+  /* integrações: card escuro com margens laterais e cantos arredondados, sem imagem */
+  .integ-section{ padding:50px 32px; background:var(--c-bg); }
+  .integ-card{ max-width:var(--maxw); margin:0 auto; border-radius:46px; padding:clamp(60px,7vw,100px) 32px; text-align:center; }
+  .integ-card .section-lead{ margin:0 auto; max-width:760px; }
 
   /* ============ FAQ (accordion) ============ */
   .faq-list{ display:flex; flex-direction:column; gap:12px; max-width:840px; }
@@ -284,7 +284,6 @@
     .problem-layout{ grid-template-columns:1fr; gap:44px; }
     .problem-aside{ position:static; }
     .manage-grid, .feat-grid, .demo-grid, .benefit-grid{ grid-template-columns:1fr 1fr; }
-    .integ-grid{ grid-template-columns:1fr; gap:36px; }
     .footer-top{ grid-template-columns:1fr 1fr; }
   }
   @media (max-width:640px){
@@ -567,18 +566,11 @@
 </section>
 
 <!-- ============ INTEGRAÇÕES E AUTOMAÇÕES ============ -->
-<section class="section section-bg-light">
-  <div class="section-inner">
-    <div class="integ-grid">
-      <div>
-        <span class="eyebrow">Integrações e automações</span>
-        <h2 class="section-title">Conectado ao <span class="accent">resto da sua operação</span></h2>
-        <p class="section-lead">Integrações entre a frota e outras áreas da gestão reduzem tarefas manuais e ajudam a manter custos, abastecimentos e dados operacionais sempre alinhados.</p>
-      </div>
-      <div class="integ-visual">
-        <img src="../assets/solucoes-imagens/solucao-frota.png" alt="Integrações A2O Frota">
-      </div>
-    </div>
+<section class="integ-section">
+  <div class="integ-card section-bg-dark">
+    <span class="eyebrow">Integrações e automações</span>
+    <h2 class="section-title">Conectado ao <span class="accent">resto da sua operação</span></h2>
+    <p class="section-lead">Integrações entre a frota e outras áreas da gestão reduzem tarefas manuais e ajudam a manter custos, abastecimentos e dados operacionais sempre alinhados.</p>
   </div>
 </section>
 
