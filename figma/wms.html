@@ -168,7 +168,7 @@
   .sol-hero{ padding:112px 32px 0; background:var(--c-bg); }
   .sol-hero-banner{ position:relative; max-width:var(--maxw); margin:0 auto; }
   .sol-hero-banner img{ display:block; width:100%; height:auto; border-radius:36px; }
-  .sol-hero-shade{ position:absolute; inset:0; z-index:1; pointer-events:none; background:linear-gradient(100deg, rgba(8,14,38,.78) 0%, rgba(8,14,38,.48) 34%, rgba(8,14,38,.08) 62%, transparent 76%); -webkit-mask-image:url('../assets/hero-wms-desktop.png'); mask-image:url('../assets/hero-wms-desktop.png'); -webkit-mask-size:100% 100%; mask-size:100% 100%; border-radius:36px; }
+  .sol-hero-shade{ position:absolute; inset:0; z-index:1; pointer-events:none; background:linear-gradient(100deg, rgba(8,14,38,.78) 0%, rgba(8,14,38,.48) 34%, rgba(8,14,38,.08) 62%, transparent 76%); -webkit-mask-image:url('../assets/hero-wms-desktop.webp'); mask-image:url('../assets/hero-wms-desktop.webp'); -webkit-mask-size:100% 100%; mask-size:100% 100%; border-radius:36px; }
   .sol-hero-content{ position:absolute; left:clamp(24px,4vw,60px); bottom:clamp(24px,4vw,52px); z-index:2; max-width:620px; color:#fff; }
   .sol-hero-content .eyebrow{ color:#fff; background:rgba(255,255,255,.10); border-color:rgba(255,255,255,.28); }
   .sol-hero-content .eyebrow::before{ background:var(--c-cyan); }
@@ -187,7 +187,7 @@
   @media (max-width:640px){
     .sol-hero{ padding:88px 20px 0; }
     .sol-hero-banner img{ min-height:0; object-fit:fill; border-radius:26px; }
-    .sol-hero-shade{ -webkit-mask-image:url('../assets/hero-wms-mobile.png'); mask-image:url('../assets/hero-wms-mobile.png'); -webkit-mask-size:100% 100%; mask-size:100% 100%; border-radius:26px; background:linear-gradient(to top, rgba(8,14,38,.88) 0%, rgba(8,14,38,.5) 46%, rgba(8,14,38,.06) 72%, transparent 86%); }
+    .sol-hero-shade{ -webkit-mask-image:url('../assets/hero-wms-mobile.webp'); mask-image:url('../assets/hero-wms-mobile.webp'); -webkit-mask-size:100% 100%; mask-size:100% 100%; border-radius:26px; background:linear-gradient(to top, rgba(8,14,38,.88) 0%, rgba(8,14,38,.5) 46%, rgba(8,14,38,.06) 72%, transparent 86%); }
     .sol-hero-actions{ flex-direction:column; align-items:stretch; }
   }
 
@@ -414,8 +414,8 @@
 <section class="sol-hero">
   <div class="sol-hero-banner">
     <picture>
-      <source media="(max-width:640px)" srcset="../assets/hero-wms-mobile.png">
-      <img src="../assets/hero-wms-desktop.png" alt="A2O WMS: gestão do armazém do recebimento à expedição">
+      <source media="(max-width:640px)" srcset="../assets/hero-wms-mobile.webp">
+      <img src="../assets/hero-wms-desktop.webp" alt="A2O WMS: gestão do armazém do recebimento à expedição">
     </picture>
     <div class="sol-hero-shade" aria-hidden="true"></div>
     <div class="sol-hero-content">
@@ -577,7 +577,7 @@
         </div>
       </div>
       <div class="seg-card">
-        <div class="seg-media"><img src="../assets/conteudo-imagens/blog-transporte.jpg" alt="Armazéns gerais"></div>
+        <div class="seg-media"><img src="../assets/conteudo-imagens/blog-transporte.webp" alt="Armazéns gerais"></div>
         <div class="seg-body">
           <span class="seg-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg></span>
           <h3>Armazéns gerais</h3>

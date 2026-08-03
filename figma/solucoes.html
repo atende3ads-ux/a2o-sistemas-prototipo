@@ -161,7 +161,7 @@
   .sol-hero-banner{ position:relative; max-width:var(--maxw); margin:0 auto; }
   .sol-hero-banner img{ display:block; width:100%; height:auto; border-radius:36px; }
   /* véu escuro à esquerda p/ legibilidade, mascarado pela própria arte (respeita cantos e corte) */
-  .sol-hero-shade{ position:absolute; inset:0; z-index:1; pointer-events:none; background:linear-gradient(100deg, rgba(8,14,38,.82) 0%, rgba(8,14,38,.55) 34%, rgba(8,14,38,.10) 62%, transparent 76%); -webkit-mask-image:url('../assets/solucoes-imagens/image-hero-banner-solucoes.png'); mask-image:url('../assets/solucoes-imagens/image-hero-banner-solucoes.png'); -webkit-mask-size:100% 100%; mask-size:100% 100%; border-radius:36px; }
+  .sol-hero-shade{ position:absolute; inset:0; z-index:1; pointer-events:none; background:linear-gradient(100deg, rgba(8,14,38,.82) 0%, rgba(8,14,38,.55) 34%, rgba(8,14,38,.10) 62%, transparent 76%); -webkit-mask-image:url('../assets/solucoes-imagens/image-hero-banner-solucoes.webp'); mask-image:url('../assets/solucoes-imagens/image-hero-banner-solucoes.webp'); -webkit-mask-size:100% 100%; mask-size:100% 100%; border-radius:36px; }
   .sol-hero-content{ position:absolute; left:clamp(24px,4vw,60px); bottom:clamp(24px,4vw,56px); z-index:2; max-width:560px; color:#fff; }
   .sol-hero-content .eyebrow{ color:#fff; background:rgba(255,255,255,.10); border-color:rgba(255,255,255,.28); }
   .sol-hero-content .eyebrow::before{ background:var(--c-cyan); }
@@ -176,7 +176,7 @@
   @media (max-width:640px){
     .sol-hero{ padding:88px 20px 0; }
     .sol-hero-banner img{ min-height:0; object-fit:fill; border-radius:26px; }
-    .sol-hero-shade{ -webkit-mask-image:url('../assets/solucoes-imagens/image-hero-banner-solucoes-mobile.png'); mask-image:url('../assets/solucoes-imagens/image-hero-banner-solucoes-mobile.png'); -webkit-mask-size:100% 100%; mask-size:100% 100%; border-radius:26px; background:linear-gradient(to top, rgba(8,14,38,.86) 0%, rgba(8,14,38,.45) 42%, rgba(8,14,38,.05) 70%, transparent 84%); }
+    .sol-hero-shade{ -webkit-mask-image:url('../assets/solucoes-imagens/image-hero-banner-solucoes-mobile.webp'); mask-image:url('../assets/solucoes-imagens/image-hero-banner-solucoes-mobile.webp'); -webkit-mask-size:100% 100%; mask-size:100% 100%; border-radius:26px; background:linear-gradient(to top, rgba(8,14,38,.86) 0%, rgba(8,14,38,.45) 42%, rgba(8,14,38,.05) 70%, transparent 84%); }
   }
 
   /* ============ PAGE HERO (páginas internas de solução) ============ */
@@ -468,8 +468,8 @@
 <section class="sol-hero">
   <div class="sol-hero-banner">
     <picture>
-      <source media="(max-width:640px)" srcset="../assets/solucoes-imagens/image-hero-banner-solucoes-mobile.png">
-      <img src="../assets/solucoes-imagens/image-hero-banner-solucoes.png" alt="Gestor com tablet em frente à frota">
+      <source media="(max-width:640px)" srcset="../assets/solucoes-imagens/image-hero-banner-solucoes-mobile.webp">
+      <img src="../assets/solucoes-imagens/image-hero-banner-solucoes.webp" alt="Gestor com tablet em frente à frota">
     </picture>
     <div class="sol-hero-shade" aria-hidden="true"></div>
     <div class="sol-hero-content">
@@ -489,7 +489,7 @@
     </div>
     <div class="eco-grid">
       <a class="eco-card" href="tms.html">
-        <div class="eco-media"><img src="../assets/solucoes-imagens/solucao-tms.png" alt="A2O TMS"></div>
+        <div class="eco-media"><img src="../assets/solucoes-imagens/solucao-tms.webp" alt="A2O TMS"></div>
         <div class="eco-body">
           <span class="eco-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg></span>
           <span class="eco-kicker">Transporte</span>
@@ -504,7 +504,7 @@
         </div>
       </a>
       <a class="eco-card" href="frota.html">
-        <div class="eco-media"><img src="../assets/solucoes-imagens/solucao-frota.png" alt="A2O Frota"></div>
+        <div class="eco-media"><img src="../assets/solucoes-imagens/solucao-frota.webp" alt="A2O Frota"></div>
         <div class="eco-body">
           <span class="eco-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg></span>
           <span class="eco-kicker">Frota</span>
@@ -519,7 +519,7 @@
         </div>
       </a>
       <a class="eco-card" href="agro.html">
-        <div class="eco-media"><img src="../assets/solucoes-imagens/solucao-agro.png" alt="A2O Agro"></div>
+        <div class="eco-media"><img src="../assets/solucoes-imagens/solucao-agro.webp" alt="A2O Agro"></div>
         <div class="eco-body">
           <span class="eco-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10z"/><path d="M2 21c0-3 1.85-5.36 5.08-6"/></svg></span>
           <span class="eco-kicker">Agronegócio</span>
@@ -534,7 +534,7 @@
         </div>
       </a>
       <a class="eco-card" href="wms.html">
-        <div class="eco-media"><img src="../assets/solucoes-imagens/solucao-wms.png" alt="A2O WMS"></div>
+        <div class="eco-media"><img src="../assets/solucoes-imagens/solucao-wms.webp" alt="A2O WMS"></div>
         <div class="eco-body">
           <span class="eco-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg></span>
           <span class="eco-kicker">Armazém</span>
@@ -549,7 +549,7 @@
         </div>
       </a>
       <a class="eco-card" href="locacao.html">
-        <div class="eco-media"><img src="../assets/solucoes-imagens/solucao-locacao.png" alt="A2O Locação"></div>
+        <div class="eco-media"><img src="../assets/solucoes-imagens/solucao-locacao.webp" alt="A2O Locação"></div>
         <div class="eco-body">
           <span class="eco-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg></span>
           <span class="eco-kicker">Locação</span>
