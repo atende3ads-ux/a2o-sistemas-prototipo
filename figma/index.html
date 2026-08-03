@@ -136,7 +136,7 @@
   .burger{ display:none; width:42px; height:42px; border-radius:10px; background:rgba(20,36,90,.06); border:1px solid rgba(20,36,90,.14); color:#14245a; font-size:18px; align-items:center; justify-content:center; }
 
   /* ============ HERO V2 (duas colunas: texto | caminhão, fundo próprio) ============ */
-  .hero-v2{ position:sticky; top:0; z-index:0; padding:140px 32px 72px; overflow:hidden; color:var(--c-navy-900); background:linear-gradient(185deg,#FFFFFF 2%,#EEF4FC 38%,#E3EDF9 71%); display:flex; align-items:center; }
+  .hero-v2{ position:sticky; top:0; z-index:0; min-height:85vh; padding:150px 32px 90px; overflow:hidden; color:var(--c-navy-900); background:linear-gradient(185deg,#FFFFFF 2%,#EEF4FC 38%,#E3EDF9 71%); display:flex; align-items:center; }
   .hero-v2-bg{ position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position:top left; z-index:0; pointer-events:none; }
   .hero-v2-inner{ position:relative; z-index:2; max-width:var(--maxw); margin:0 auto; width:100%; display:flex; align-items:center; justify-content:space-between; gap:48px; }
   .hero-v2-text{ flex:1 1 480px; max-width:560px; min-width:0; }
@@ -144,7 +144,7 @@
   .hero-v2-truck{ width:100%; max-width:680px; height:auto; display:block; filter:drop-shadow(0 30px 40px rgba(14,23,51,.22)); }
   .hero-pill{ display:inline-flex; align-items:center; gap:10px; padding:7px 16px; background:#fff; border:1px solid var(--c-border); border-radius:999px; font-size:13px; font-weight:600; color:var(--c-text-strong); box-shadow:0 2px 4px rgba(14,23,51,.05); margin-bottom:14px; }
   .hero-pill .dot{ width:8px; height:8px; background:var(--c-cyan); border-radius:2px; box-shadow:0 0 0 3px rgba(40,199,247,.25); }
-  .hero-v2 h1{ font-family:var(--font-display); font-size:clamp(30px,3.3vw,42px); font-weight:400; line-height:1.1; letter-spacing:-.037em; color:#14245a; margin:0; }
+  .hero-v2 h1{ font-family:var(--font-display); font-size:clamp(30px,3.3vw,42px); font-weight:400; line-height:1.1; letter-spacing:-.037em; color:#14245a; margin:0; text-wrap:balance; }
   .hero-v2 h1 b{ font-weight:800; }
   .hero-sub{ font-size:16px; color:var(--c-text); line-height:1.4; margin-top:20px; }
   .hero-actions{ display:flex; align-items:center; flex-wrap:wrap; gap:16px; margin-top:26px; }
@@ -178,9 +178,9 @@
   .eyebrow{ display:inline-flex; align-items:center; gap:8px; font-size:12px; font-weight:700; color:var(--c-blue); letter-spacing:.08em; text-transform:uppercase; margin-bottom:16px; background:rgba(29,63,163,.07); border:1px solid rgba(29,63,163,.16); border-radius:999px; padding:6px 14px; }
   .eyebrow::before{ content:''; width:6px; height:6px; border-radius:50%; background:var(--c-cyan); box-shadow:0 0 0 2px rgba(40,199,247,.22); }
   .section-bg-dark .eyebrow{ color:var(--c-cyan-light); background:rgba(255,255,255,.08); border-color:rgba(255,255,255,.18); }
-  .section-title{ font-size:clamp(28px,2.8vw,40px); font-weight:400; letter-spacing:-.03em; line-height:1.15; color:var(--c-navy-900); margin-bottom:18px; }
+  .section-title{ font-size:clamp(28px,2.8vw,40px); font-weight:400; letter-spacing:-.03em; line-height:1.15; color:var(--c-navy-900); margin-bottom:18px; text-wrap:balance; }
   .section-title .accent{ font-weight:800;  color:var(--c-blue); }
-  .section-bg-dark .section-title{ color:rgba(255,255,255,.92); }
+  .section-bg-dark .section-title{ color:rgba(255,255,255,.92); text-wrap:balance; }
   .section-bg-dark .section-title .accent{  color:var(--c-cyan-light); }
   .section-lead{ font-size:17px; color:var(--c-text); line-height:1.6; max-width:720px; }
   .section-bg-dark .section-lead{ color:rgba(255,255,255,.75); }
@@ -205,7 +205,7 @@
   .problem-section::before{ content:''; position:absolute; top:0; right:-140px; width:520px; height:520px; background:radial-gradient(circle, rgba(251,113,133,.06) 0%, transparent 70%); pointer-events:none; }
   .problem-layout{ display:grid; grid-template-columns:0.82fr 1.18fr; gap:80px; align-items:start; position:relative; }
   .problem-aside{ position:sticky; top:110px; }
-  .problem-aside .section-title{ margin-bottom:20px; }
+  .problem-aside .section-title{ margin-bottom:20px; text-wrap:balance; }
   .problem-note{ margin-top:30px; padding:18px 22px; border-left:3px solid var(--c-red); background:linear-gradient(90deg, rgba(251,113,133,.07), rgba(251,113,133,0)); border-radius:0 12px 12px 0; font-size:14.5px; color:var(--c-text-strong); line-height:1.55; }
   .problem-note b{ color:var(--c-navy-900); font-weight:700; }
 
@@ -243,7 +243,7 @@
   .hscroll-sticky{ position:sticky; top:0; height:100vh; overflow:hidden; display:flex; flex-direction:column; background:var(--c-bg-soft); }
   .hscroll-head{ text-align:center; padding:96px 32px 20px; flex-shrink:0; }
   .hscroll-head .eyebrow{ justify-content:center; }
-  .hscroll-title{ font-size:clamp(26px,2.6vw,38px); font-weight:400; letter-spacing:-.03em; line-height:1.15; color:var(--c-navy-900); margin-bottom:14px; }
+  .hscroll-title{ font-size:clamp(26px,2.6vw,38px); font-weight:400; letter-spacing:-.03em; line-height:1.15; color:var(--c-navy-900); margin-bottom:14px; text-wrap:balance; }
   .hscroll-lead{ font-size:15px; color:var(--c-text); line-height:1.5; max-width:600px; margin:0 auto 22px; text-align:center; }
   .hscroll-title .accent{ font-weight:800;  color:var(--c-blue); }
   .sol-tabs{ display:inline-flex; gap:4px; padding:6px; background:#fff; border:1px solid var(--c-border); border-radius:999px; box-shadow:0 6px 18px rgba(14,23,51,.06); max-width:100%; }
@@ -368,7 +368,7 @@
   .final-cta{ background:var(--grad-hero); color:#fff; position:relative; z-index:2; overflow:hidden; text-align:center; }
   .final-cta::before{ content:''; position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); width:800px; height:800px; background:radial-gradient(circle, rgba(40,199,247,.12) 0%, transparent 60%); pointer-events:none; }
   .final-cta .section-inner{ position:relative; }
-  .final-cta h2{ font-size:clamp(30px,3.4vw,46px); font-weight:400; letter-spacing:-.03em; line-height:1.12; margin:0 auto 18px; max-width:18ch; color:rgba(255,255,255,.94); }
+  .final-cta h2{ font-size:clamp(30px,3.4vw,46px); font-weight:400; letter-spacing:-.03em; line-height:1.12; margin:0 auto 18px; max-width:18ch; color:rgba(255,255,255,.94); text-wrap:balance; }
   .final-cta h2 .accent{ font-weight:800;  color:var(--c-cyan-light); }
   .final-cta p{ font-size:18px; color:rgba(255,255,255,.78); max-width:560px; margin:0 auto 32px; }
   .final-cta .btn-row{ display:flex; gap:16px; justify-content:center; flex-wrap:wrap; }
@@ -436,7 +436,7 @@
     /* caminhão sangra até as bordas (compensa o padding lateral da seção) pra ganhar presença no mobile */
     .hero-v2-media{ flex:none; width:auto; margin:0 -20px; }
     .hero-v2-truck{ max-width:100%; }
-    .hero-v2 h1{ font-size:30px; }
+    .hero-v2 h1{ font-size:30px; text-wrap:balance; }
     .hero-actions{ flex-direction:column; align-items:stretch; }
     .btn-hero-primary, .btn-hero-outline{ justify-content:center; }
     .hero-divisor{ display:none; }
