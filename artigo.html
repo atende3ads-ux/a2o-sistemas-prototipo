@@ -181,14 +181,10 @@
   .problem-aside{ position:sticky; top:110px; }
   .problem-aside .section-title{ margin-bottom:20px; }
   .problem-rows{ list-style:none; }
-  .problem-row{ position:relative; display:grid; grid-template-columns:auto 1fr; gap:30px; align-items:center; padding:32px 10px 32px 0; border-top:1px solid var(--c-border); transition:padding-left .35s cubic-bezier(.2,.7,.3,1); }
+  .problem-row{ position:relative; display:grid; grid-template-columns:auto 1fr; gap:30px; align-items:center; padding:32px 10px 32px 0; border-top:1px solid var(--c-border); }
   .problem-row:last-child{ border-bottom:1px solid var(--c-border); }
-  .problem-row::after{ content:''; position:absolute; left:0; top:-1px; width:0; height:2px; background:var(--grad-brand); transition:width .4s cubic-bezier(.2,.7,.3,1); }
-  .problem-row:hover{ padding-left:18px; }
-  .problem-row:hover::after{ width:70px; }
-  .p-ico{ width:56px; height:56px; border-radius:16px; display:grid; place-items:center; background:rgba(29,63,163,.06); border:1px solid rgba(29,63,163,.12); color:var(--c-blue); transition:background .35s ease, color .35s ease, border-color .35s ease, box-shadow .35s ease; }
+  .p-ico{ width:56px; height:56px; border-radius:16px; display:grid; place-items:center; background:rgba(29,63,163,.06); border:1px solid rgba(29,63,163,.12); color:var(--c-blue); }
   .p-ico svg{ width:26px; height:26px; }
-  .problem-row:hover .p-ico{ background:var(--grad-brand); border-color:transparent; color:#fff; box-shadow:0 10px 22px rgba(29,63,163,.28); }
   .p-body h3{ font-size:19.5px; font-weight:700; color:var(--c-navy-900); margin-bottom:6px; letter-spacing:-.015em; }
   .p-body p{ font-size:15px; color:var(--c-text-muted); line-height:1.6; max-width:48ch; }
 
@@ -572,34 +568,6 @@
 
 <script> do rodapé.
      ========================================================== */
-  *, *::before, *::after{
-    animation:none !important;
-    transition:none !important;
-    scroll-behavior:auto !important;
-  }
-  /* header deixa de flutuar sobre o conteúdo: fica ancorado no topo da página */
-  .site-header{ position:absolute !important; }
-  /* desliga pin / parallax (elementos grudados na tela) */
-  .hero-v2, .problem-section, .problem-aside, .hscroll-sticky{ position:relative !important; top:auto !important; }
-  .hero-v2, .problem-section{ min-height:0 !important; }
-  .problem-section{ display:block !important; }
-  /* soluções: painéis empilhados na vertical, todos visíveis (em vez do scroll horizontal) */
-  .hscroll{ height:auto !important; }
-  .hscroll-sticky{ height:auto !important; overflow:visible !important; }
-  .hscroll-viewport{ overflow:visible !important; }
-  .hscroll-track{ flex-direction:column !important; height:auto !important; transform:none !important; }
-  .sol-panel{ width:100% !important; height:auto !important; padding:56px 32px !important; }
-  .hscroll-progress{ display:none !important; }
-  /* revela conteúdo que só aparecia no hover */
-  .case-hidden{ max-height:none !important; opacity:1 !important; transform:none !important; overflow:visible !important; }
-  .conf-feat::before{ opacity:1 !important; }
-  /* neutraliza deslocamentos de hover (o Figma não tem hover) */
-  .case-tile:hover, .case-tile:hover img, .eco-card:hover, .feat-card:hover, .benefit-card:hover,
-  .blog-card:hover, .post-card:hover, .sol-card:hover, .diff-card:hover, .mod-card:hover,
-  .chan:hover, .conf-feat:hover, .btn-cyan:hover, .btn-hero-primary:hover, .header-cta:hover,
-  .conf-cta:hover, .team-card:hover{ transform:none !important; }
-  .problem-row:hover{ padding-left:0 !important; }
-  .problem-row:hover::after{ width:0 !important; }
 </style>
 </head>
 <body>
