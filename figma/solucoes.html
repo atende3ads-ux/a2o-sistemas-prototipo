@@ -344,13 +344,21 @@
   .eco-arrow svg{ width:16px; height:16px; }
   .eco-card:hover .eco-arrow{ background:var(--grad-brand); color:#fff; transform:translateX(4px); }
   /* bloco "na prática" */
-  .practice-grid{ display:grid; grid-template-columns:1fr 1.05fr; gap:60px; align-items:center; }
-  .practice-visual{ border-radius:22px; overflow:hidden; box-shadow:var(--shadow-card); aspect-ratio:4/3; }
-  .practice-visual img{ width:100%; height:100%; object-fit:cover; display:block; }
+  /* "na prática": card escuro arredondado com corte no canto (mesma linguagem dos banners) */
+  .practice-section{ padding:50px 32px; background:var(--c-bg); }
+  .practice-card{ position:relative; max-width:var(--maxw); margin:0 auto; background:var(--c-navy-900); border-radius:46px; padding:100px 32px 104px; text-align:center; color:#fff; overflow:hidden; }
+  .practice-card::before{ content:''; position:absolute; top:-120px; right:-120px; width:480px; height:480px; background:radial-gradient(circle, rgba(29,63,163,.35) 0%, transparent 70%); pointer-events:none; }
+  /* corte diagonal com ponta arredondada no canto inferior direito */
+  .practice-card::after{ content:''; position:absolute; right:-46px; bottom:-46px; width:110px; height:110px; background:var(--c-bg); transform:rotate(45deg); border-radius:24px; }
+  .practice-card .eyebrow{ color:#fff; background:rgba(255,255,255,.08); border-color:rgba(255,255,255,.2); }
+  .practice-title{ font-family:var(--font-display); font-size:clamp(26px,2.6vw,38px); font-weight:400; letter-spacing:-.028em; line-height:1.15; margin-bottom:18px; color:rgba(255,255,255,.94); }
+  .practice-title b{ font-weight:800; }
+  .practice-card p{ font-size:15px; color:rgba(255,255,255,.75); line-height:1.65; max-width:56ch; margin:0 auto 30px; }
+  .practice-cta{ display:inline-flex; align-items:center; gap:9px; background:var(--c-blue); color:#fff; border-radius:70px; padding:13px 26px; font-weight:600; font-size:14.5px; box-shadow:0 8px 20px rgba(29,63,163,.35); transition:background .2s, transform .2s; }
+  .practice-cta:hover{ background:var(--c-navy-800); transform:translateY(-1px); }
   @media (max-width:1024px){
     .eco-grid{ grid-template-columns:1fr 1fr; }
     .eco-card, .eco-card:nth-child(4), .eco-card:nth-child(5){ grid-column:auto; }
-    .practice-grid{ grid-template-columns:1fr; gap:36px; }
   }
   @media (max-width:640px){
     .eco-grid{ grid-template-columns:1fr; }
@@ -561,22 +569,15 @@
 </section>
 
 <!-- ============ NA PRÁTICA ============ -->
-<section class="section section-bg-soft">
-  <div class="section-inner">
-    <div class="practice-grid">
-      <div class="practice-visual">
-        <img src="../assets/solucoes-imagens/hero-image.png" alt="Rotina de quem usa a A2O">
-      </div>
-      <div>
-        <span class="eyebrow">Na prática</span>
-        <h2 class="section-title">Feito para a <span class="accent">realidade da sua operação</span></h2>
-        <p class="section-lead">A rotina da operação não acontece por partes. Por isso, as soluções A2O conectam informações e processos para facilitar o trabalho da equipe, reduzir retrabalho e dar mais clareza às decisões para o seu negócio.</p>
-        <a href="como-funciona.html" class="btn-hero-primary" style="margin-top:28px;">
-          Como funciona
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-        </a>
-      </div>
-    </div>
+<section class="practice-section">
+  <div class="practice-card">
+    <span class="eyebrow">Na prática</span>
+    <h2 class="practice-title">Feito para a <b>realidade da sua operação</b></h2>
+    <p>A rotina da operação não acontece por partes. Por isso, as soluções A2O conectam informações e processos para facilitar o trabalho da equipe, reduzir retrabalho e dar mais clareza às decisões para o seu negócio.</p>
+    <a href="como-funciona.html" class="practice-cta">
+      Como funciona
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+    </a>
   </div>
 </section>
 
