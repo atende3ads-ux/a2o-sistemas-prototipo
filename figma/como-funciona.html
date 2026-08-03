@@ -198,7 +198,8 @@
   /* ============ BENEFÍCIOS (light cards) ============ */
   .benefit-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:22px; }
   .benefit-card{ background:#fff; border:1px solid var(--c-border); border-radius:18px; padding:30px 28px; }
-  .benefit-num{ width:40px; height:40px; border-radius:11px; background:rgba(29,63,163,.08); border:1px solid rgba(29,63,163,.16); color:var(--c-blue); display:grid; place-items:center; font-weight:800; font-size:16px; margin-bottom:18px; }
+  .benefit-ico{ width:50px; height:50px; border-radius:14px; background:var(--c-blue); display:grid; place-items:center; color:#fff; margin-bottom:18px; box-shadow:0 8px 18px rgba(29,63,163,.22); }
+  .benefit-ico svg{ width:24px; height:24px; }
   .benefit-card h3{ font-size:18px; font-weight:700; color:var(--c-navy-900); margin-bottom:8px; letter-spacing:-.01em; }
   .benefit-card p{ font-size:14.5px; color:var(--c-text-muted); line-height:1.6; }
 
@@ -524,17 +525,17 @@
     </div>
     <div class="benefit-grid">
       <div class="benefit-card">
-        <div class="benefit-num">1</div>
+        <span class="benefit-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg></span>
         <h3>Integração total</h3>
         <p>As áreas da operação trabalham com informações conectadas, evitando lançamentos duplicados e facilitando a rotina entre fiscal, transporte, frota e financeiro.</p>
       </div>
       <div class="benefit-card">
-        <div class="benefit-num">2</div>
+        <span class="benefit-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></span>
         <h3>Tempo real</h3>
         <p>Acompanhe viagens, documentos, custos e indicadores da operação com informações atualizadas para agir com mais rapidez quando necessário.</p>
       </div>
       <div class="benefit-card">
-        <div class="benefit-num">3</div>
+        <span class="benefit-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><path d="M9 15l2 2 4-4"/></svg></span>
         <h3>Automação fiscal</h3>
         <p>Emita e gerencie documentos fiscais eletrônicos com mais segurança, reduzindo retrabalho e ajudando a manter a operação em conformidade.</p>
       </div>
