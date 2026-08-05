@@ -983,9 +983,11 @@
     var panels = [].slice.call(document.querySelectorAll('.sol-panel'));
     if (!wrap || !track) return;
     var N = panels.length;
-    var targetP = 0, curP = 0, raf = null, activeI = -1;
-    var EASE = 0.075; // menor = mais suave/lento pra assentar
+    var targetP = 0, curP = 0, raf = null, activeI = -1, snapping = false;
+    var EASE = 0.075;      // menor = mais suave/lento pra assentar
+    var EASE_SNAP = 0.19;  // ao clicar numa aba, assenta mais rápido
     function isDesktop() { return window.innerWidth > 1024; }
+    function docTop(el) { return el.getBoundingClientRect().top + (window.pageYOffset || document.documentElement.scrollTop); }
     function setActive(i) {
       if (i === activeI) return;
       activeI = i;
@@ -999,8 +1001,8 @@
       if (!raf) raf = requestAnimationFrame(tick);
     }
     function tick() {
-      curP += (targetP - curP) * EASE;
-      if (Math.abs(targetP - curP) < 0.0004) curP = targetP;
+      curP += (targetP - curP) * (snapping ? EASE_SNAP : EASE);
+      if (Math.abs(targetP - curP) < 0.0004) { curP = targetP; snapping = false; }
       var maxX = track.scrollWidth - window.innerWidth;
       track.style.transform = 'translate3d(' + (-curP * maxX).toFixed(2) + 'px,0,0)';
       if (fill) fill.style.width = (curP * 100).toFixed(2) + '%';
@@ -1011,7 +1013,8 @@
       t.addEventListener('click', function () {
         if (isDesktop()) {
           var total = wrap.offsetHeight - window.innerHeight;
-          window.scrollTo({ top: wrap.offsetTop + (i / (N - 1)) * total, behavior: 'smooth' });
+          snapping = true;
+          window.scrollTo({ top: Math.round(docTop(wrap) + (i / (N - 1)) * total), behavior: 'smooth' });
         } else {
           panels[i].scrollIntoView({ behavior: 'smooth', block: 'start' });
           setActive(i);
