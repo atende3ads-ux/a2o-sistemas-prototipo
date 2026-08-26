@@ -160,7 +160,7 @@
   /* ============ STATS STRIP (métricas) ============ */
   .stats-section{ background:#1D3FA3; padding:56px 32px 60px; position:relative; z-index:1; }
   .stats-inner{ max-width:var(--maxw); margin:0 auto; }
-  .stats-strip{ display:grid; grid-template-columns:repeat(4,1fr); color:#fff; }
+  .stats-strip{ display:grid; grid-template-columns:repeat(3,1fr); color:#fff; }
   .stat-item{ position:relative; padding:0 28px; }
   .stat-item + .stat-item{ border-left:1px solid rgba(255,255,255,.18); }
   .stat-num{ font-size:clamp(40px,4.4vw,58px); font-weight:800; letter-spacing:-.045em; line-height:1;  color:#fff; margin-bottom:10px; }
@@ -410,8 +410,8 @@
     .header-actions .header-cta{ display:none; }
     .split-grid{ grid-template-columns:1fr; gap:48px; }
     .conf-cards{ grid-template-columns:1fr; max-width:560px; }
-    .stats-strip{ grid-template-columns:repeat(2,1fr); gap:32px 0; }
-    .stat-item:nth-child(3){ border-left:none; }
+    .stats-strip{ grid-template-columns:repeat(3,1fr); }
+    .stat-item{ padding:0 16px; }
     .sol-grid{ grid-template-columns:1fr 1fr; }
     .logos-row{ grid-template-columns:repeat(3,1fr); }
     .cases-tiles, .blog-grid{ grid-template-columns:1fr 1fr; }
@@ -567,9 +567,8 @@
 <section class="stats-section">
   <div class="stats-inner">
     <div class="stats-strip">
-      <div class="stat-item"><div class="stat-num">+863</div><div class="stat-label">clientes registrados</div></div>
-      <div class="stat-item"><div class="stat-num">+118<span class="stat-unit">mil</span></div><div class="stat-label">documentos emitidos por mês</div></div>
-      <div class="stat-item"><div class="stat-num">+709<span class="stat-unit">mil</span></div><div class="stat-label">emissão de documentos fiscais</div></div>
+      <div class="stat-item"><div class="stat-num">+7.500</div><div class="stat-label">usuários ativos</div></div>
+      <div class="stat-item"><div class="stat-num">+100<span class="stat-unit">mil</span></div><div class="stat-label">média de documentos emitidos por mês</div></div>
       <div class="stat-item"><div class="stat-num">+30<span class="stat-unit">anos</span></div><div class="stat-label">de atuação no segmento de transportes e logística</div></div>
     </div>
   </div>

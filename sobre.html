@@ -321,7 +321,7 @@
   /* faixa de métricas (mesma da home) */
   .stats-section{ background:var(--c-bg); padding:56px 32px 60px; }
   .stats-inner{ max-width:var(--maxw); margin:0 auto; }
-  .stats-strip{ display:grid; grid-template-columns:repeat(4,1fr); color:var(--c-blue); }
+  .stats-strip{ display:grid; grid-template-columns:repeat(3,1fr); color:var(--c-blue); }
   .stat-item{ position:relative; padding:0 28px; }
   .stat-item + .stat-item{ border-left:1px solid rgba(29,63,163,.18); }
   .stat-num{ font-size:clamp(40px,4.4vw,58px); font-weight:800; letter-spacing:-.045em; line-height:1;  color:var(--c-blue); margin-bottom:10px; }
@@ -373,8 +373,8 @@
   .tech-check svg{ width:14px; height:14px; }
   @media (max-width:1024px){
     .diff-grid{ grid-template-columns:1fr; } .team-grid{ grid-template-columns:1fr 1fr; } .tech-grid{ grid-template-columns:1fr; gap:40px; }
-    .stats-strip{ grid-template-columns:repeat(2,1fr); gap:32px 0; }
-    .stat-item:nth-child(3){ border-left:none; }
+    .stats-strip{ grid-template-columns:repeat(3,1fr); }
+    .stat-item{ padding:0 16px; }
     .timeline::before{ left:10px; transform:none; }
     .tl-item{ width:auto; margin-left:38px; }
     .tl-item:nth-child(even){ margin-left:38px; }
@@ -474,9 +474,8 @@
 <section class="stats-section">
   <div class="stats-inner">
     <div class="stats-strip">
-      <div class="stat-item"><div class="stat-num">+863</div><div class="stat-label">clientes registrados</div></div>
-      <div class="stat-item"><div class="stat-num">+118<span class="stat-unit">mil</span></div><div class="stat-label">documentos emitidos por mês</div></div>
-      <div class="stat-item"><div class="stat-num">+709<span class="stat-unit">mil</span></div><div class="stat-label">emissão de documentos fiscais</div></div>
+      <div class="stat-item"><div class="stat-num">+7.500</div><div class="stat-label">usuários ativos</div></div>
+      <div class="stat-item"><div class="stat-num">+100<span class="stat-unit">mil</span></div><div class="stat-label">média de documentos emitidos por mês</div></div>
       <div class="stat-item"><div class="stat-num">+30<span class="stat-unit">anos</span></div><div class="stat-label">de atuação no segmento de transportes e logística</div></div>
     </div>
   </div>
