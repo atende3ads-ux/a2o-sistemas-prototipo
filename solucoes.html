@@ -321,13 +321,12 @@
   .eco-grid{ display:grid; grid-template-columns:repeat(6,1fr); gap:24px; }
   .eco-card{ grid-column:span 2; display:flex; flex-direction:column; background:#fff; border:1px solid var(--c-border); border-radius:22px; overflow:hidden; transition:transform .25s, box-shadow .25s, border-color .25s; }
   /* segunda linha (2 cards) centralizada */
-  .eco-card:nth-child(4){ grid-column:2 / span 2; }
-  .eco-card:nth-child(5){ grid-column:4 / span 2; }
   .eco-card:hover{ transform:translateY(-6px); box-shadow:0 28px 56px rgba(14,23,51,.14); border-color:var(--c-cyan); }
   .eco-media{ position:relative; aspect-ratio:16/10; overflow:hidden; background:var(--c-bg-soft); }
   .eco-media::after{ content:''; position:absolute; inset:0; background:linear-gradient(to top, rgba(8,14,38,.30) 0%, transparent 44%); pointer-events:none; }
   .eco-media img{ position:absolute; inset:0; width:100%; height:100%; object-fit:cover; transition:transform .9s cubic-bezier(.22,1,.36,1); }
   .eco-card:hover .eco-media img{ transform:scale(1.06); }
+  .eco-tag{ position:absolute; right:12px; bottom:12px; z-index:2; background:rgba(8,14,38,.72); color:#fff; font-size:11px; font-weight:600; letter-spacing:.02em; padding:5px 11px; border-radius:999px; }
   .eco-body{ position:relative; padding:42px 26px 24px; display:flex; flex-direction:column; flex:1; }
   /* ícone da solução cavalgando a divisa foto/corpo */
   .eco-ico{ position:absolute; top:-27px; left:24px; width:54px; height:54px; border-radius:15px; background:var(--c-blue); color:#fff; display:grid; place-items:center; border:3px solid #fff; box-shadow:0 12px 26px rgba(29,63,163,.35); }
@@ -357,11 +356,11 @@
   .practice-cta:hover{ background:var(--c-navy-800); transform:translateY(-1px); }
   @media (max-width:1024px){
     .eco-grid{ grid-template-columns:1fr 1fr; }
-    .eco-card, .eco-card:nth-child(4), .eco-card:nth-child(5){ grid-column:auto; }
+    .eco-card{ grid-column:auto; }
   }
   @media (max-width:640px){
     .eco-grid{ grid-template-columns:1fr; }
-    .eco-card, .eco-card:nth-child(4), .eco-card:nth-child(5){ grid-column:auto; }
+    .eco-card{ grid-column:auto; }
   }
 
 
@@ -407,6 +406,10 @@
               <a class="mega-item" href="locacao.html">
                 <span class="mega-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg></span>
                 <span><h4>A2O Locação</h4><p>Contratos, cobranças e faturamento de locação.</p></span>
+              </a>
+              <a class="mega-item" href="torre-de-controle.html">
+                <span class="mega-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18.2 12.27 20 6H4l1.8 6.27a1 1 0 0 0 .95.73h10.5a1 1 0 0 0 .96-.73Z"/><path d="M8 13v9"/><path d="M16 22v-9"/><path d="m9 6 1 7"/><path d="m15 6-1 7"/><path d="M12 6V2"/><path d="M13 2h-2"/></svg></span>
+                <span><h4>A2O Torre de Controle</h4><p>Rastreamento, viagens, exceções e diárias.</p></span>
               </a>
             </div>
           </div>
@@ -533,6 +536,21 @@
           <div class="eco-foot"><span class="eco-link">Ver solução Locação</span><span class="eco-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span></div>
         </div>
       </a>
+      <a class="eco-card" href="torre-de-controle.html">
+        <div class="eco-media"><img src="assets/tela-sistema-a2o.webp" alt="A2O Torre de Controle"><span class="eco-tag">Imagem ilustrativa</span></div>
+        <div class="eco-body">
+          <span class="eco-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18.2 12.27 20 6H4l1.8 6.27a1 1 0 0 0 .95.73h10.5a1 1 0 0 0 .96-.73Z"/><path d="M8 13v9"/><path d="M16 22v-9"/><path d="m9 6 1 7"/><path d="m15 6-1 7"/><path d="M12 6V2"/><path d="M13 2h-2"/></svg></span>
+          <span class="eco-kicker">Monitoramento</span>
+          <h3>A2O Torre de Controle</h3>
+          <p>Rastreamento, viagens do TMS, exceções e diárias reunidos em uma visão operacional em tempo real.</p>
+          <ul class="eco-list">
+          <li><span class="eco-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span> Rastreamento e ETA</li>
+          <li><span class="eco-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span> Central de exceções</li>
+          <li><span class="eco-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span> Cercas virtuais e diárias</li>
+          </ul>
+          <div class="eco-foot"><span class="eco-link">Ver solução Torre de Controle</span><span class="eco-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span></div>
+        </div>
+      </a>
     </div>
   </div>
 </section>
@@ -616,6 +634,7 @@
           <li><a href="agro.html">Agro</a></li>
           <li><a href="wms.html">WMS</a></li>
           <li><a href="locacao.html">Locação</a></li>
+          <li><a href="torre-de-controle.html">Torre de Controle</a></li>
         </ul>
       </div>
       <div class="footer-col">

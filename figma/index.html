@@ -239,7 +239,7 @@
 
   /* ============ SOLUÇÕES (scroll horizontal com pin) ============ */
   .solutions-hscroll{ position:relative; z-index:2; background:var(--c-bg-soft); }
-  .hscroll{ position:relative; height:640vh; }
+  .hscroll{ position:relative; height:775vh; }
   .hscroll-sticky{ position:sticky; top:0; height:100vh; overflow:hidden; display:flex; flex-direction:column; background:var(--c-bg-soft); }
   .hscroll-head{ text-align:center; padding:96px 32px 20px; flex-shrink:0; }
   .hscroll-head .eyebrow{ justify-content:center; }
@@ -275,6 +275,8 @@
   .sol-photo.agro{ background:linear-gradient(150deg,#0E1733 0%,#155e8a 70%,#28C7F7 130%); }
   .sol-photo.wms{ background:linear-gradient(150deg,#14245A 0%,#243c86 65%,#3aa0e0 130%); }
   .sol-photo.locacao{ background:linear-gradient(150deg,#0E1733 0%,#1D3FA3 68%,#28C7F7 135%); }
+  .sol-photo.torre{ background:linear-gradient(150deg,#14245A 0%,#1D3FA3 66%,#28C7F7 130%); }
+  .sol-photo.torre img{ object-position:62% 50%; }
   .panel-soon{ display:inline-flex; align-items:center; gap:7px; font-size:11px; font-weight:700; letter-spacing:.08em; text-transform:uppercase; color:var(--c-blue); background:rgba(29,63,163,.08); border:1px solid rgba(29,63,163,.2); border-radius:999px; padding:5px 12px; margin-bottom:16px; }
   .panel-soon::before{ content:''; width:6px; height:6px; border-radius:50%; background:var(--c-cyan); box-shadow:0 0 0 3px rgba(40,199,247,.22); }
 
@@ -537,6 +539,10 @@
                 <span class="mega-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg></span>
                 <span><h4>A2O Locação</h4><p>Contratos, cobranças e faturamento de locação.</p></span>
               </a>
+              <a class="mega-item" href="torre-de-controle.html">
+                <span class="mega-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18.2 12.27 20 6H4l1.8 6.27a1 1 0 0 0 .95.73h10.5a1 1 0 0 0 .96-.73Z"/><path d="M8 13v9"/><path d="M16 22v-9"/><path d="m9 6 1 7"/><path d="m15 6-1 7"/><path d="M12 6V2"/><path d="M13 2h-2"/></svg></span>
+                <span><h4>A2O Torre de Controle</h4><p>Rastreamento, viagens, exceções e diárias.</p></span>
+              </a>
             </div>
           </div>
         </li>
@@ -671,6 +677,7 @@
           <button class="sol-tab" data-i="2">A2O Agro</button>
           <button class="sol-tab" data-i="3">A2O WMS</button>
           <button class="sol-tab" data-i="4">A2O Locação</button>
+          <button class="sol-tab" data-i="5">Torre de Controle</button>
         </div>
       </div>
 
@@ -763,6 +770,24 @@
               </div>
               <div class="sol-panel-media">
                 <div class="sol-photo locacao"><img src="../assets/solucoes-imagens/solucao-locacao.webp" alt="A2O locacao"></div>
+              </div>
+            </div>
+          </article>
+
+          <!-- Painel 6: Torre de Controle -->
+          <article class="sol-panel">
+            <div class="sol-panel-inner">
+              <div class="sol-panel-text">
+                <span class="sol-panel-kicker"><span class="k-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18.2 12.27 20 6H4l1.8 6.27a1 1 0 0 0 .95.73h10.5a1 1 0 0 0 .96-.73Z"/><path d="M8 13v9"/><path d="M16 22v-9"/><path d="m9 6 1 7"/><path d="m15 6-1 7"/><path d="M12 6V2"/><path d="M13 2h-2"/></svg></span> Monitoramento</span>
+                <h3 class="sol-panel-title">A2O Torre de Controle</h3>
+                <p class="sol-panel-desc">Rastreamento, viagens do TMS, exceções e diárias reunidos em uma visão operacional em tempo real, com o histórico de cada informação preservado.</p>
+                <div class="sol-tags"><span class="sol-tag">Rastreamento</span><span class="sol-tag">ETA</span><span class="sol-tag">Exceções</span><span class="sol-tag">Diárias</span></div>
+                <a class="btn-hero-primary" href="torre-de-controle.html">Conhecer a Torre
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                </a>
+              </div>
+              <div class="sol-panel-media">
+                <div class="sol-photo torre"><img src="../assets/tela-sistema-a2o.webp" alt="A2O Torre de Controle"><span class="ph-tag">Imagem ilustrativa</span></div>
               </div>
             </div>
           </article>
@@ -959,6 +984,7 @@
           <li><a href="agro.html">Agro</a></li>
           <li><a href="wms.html">WMS</a></li>
           <li><a href="locacao.html">Locação</a></li>
+          <li><a href="torre-de-controle.html">Torre de Controle</a></li>
         </ul>
       </div>
       <div class="footer-col">
